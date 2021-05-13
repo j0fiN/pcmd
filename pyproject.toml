@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "pcmd"
+version = "0.1.0"
+description = "A super simple terminal command shortner."
+authors = ["Jofin <jofinfab@gmail.com>"]
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/j0fiN/pcmd"
+keywords = ["command-line", "utilities", "cmd", "terminal", "CLI"]
+classifiers =  [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Utilities"
+]
+
+[tool.poetry.scripts]
+pcmd = "pcmd.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = "^0.3.2"
+PyYAML = "^5.4.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
