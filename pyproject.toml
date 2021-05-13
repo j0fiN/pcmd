@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "pcmd"
-version = "0.1.0"
-description = "A super simple terminal command shortner."
+version = "1.0.0"
+description = "A super simple terminal command shortener."
 authors = ["Jofin <jofinfab@gmail.com>"]
-readme = "README.md"
+readme = "pypi.md"
 license = "Apache-2.0"
 repository = "https://github.com/j0fiN/pcmd"
 keywords = ["command-line", "utilities", "cmd", "terminal", "CLI"]
