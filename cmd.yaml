@@ -1,3 +1,3 @@
-main: echo "Hi main"
+main-hi: echo "Hi main"
 test: dir
 doc: poetry show typer
