@@ -41,7 +41,7 @@ $ pcmd
 ```
 
 ## Usage 🧰
-> The main usage where you can ***pcmd*** is during developement, where multiple long terminal commands may be used repeadetly in different order.It can be frustating to type long commands when you start up the terminal for the day or when a terminal shuts down due to unknown reasons!  
+> The main usage where you can ***pcmd*** is during developement, where multiple long terminal commands may be used repeatedtly in different order.It can be frustating to type long commands when you start up the terminal for the day or when a terminal shuts down due to unknown reasons!  
 
 ---
 <p align=center>Do throw a :star: if you like the package!</p>
