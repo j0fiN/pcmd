@@ -9,7 +9,7 @@ app = typer.Typer()
 @app.callback()
 def callback():
     """
-    A super simple terminal command shortner
+    A super simple terminal command shortener
 
     Simple example:
     1. Create file cmd.yaml and type\n

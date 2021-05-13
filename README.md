@@ -1,6 +1,6 @@
 # pcmd
 
-:sparkles: A super simple terminal command shortner.
+:sparkles: A super simple terminal command shortener.
 
 ## Getting started :rocket:
 ### Install the package :package:
