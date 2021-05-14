@@ -1,3 +1,9 @@
 main-hi: echo "Hi main"
 test: dir
 doc: poetry show typer
+lala: poetry run python pcmd/main.py run list
+list:
+  - echo "git init"
+  - echo "git add ."
+  - echo "git commit -m 'Added feature to run multiple commands'
+  - echo "git push"

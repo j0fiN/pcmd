@@ -34,6 +34,11 @@ def run(command: str):
         typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", fg=typer.colors.RED, bold=True)
     else:
         try:
-            os.system(commands[command])
+            cmds = commands[command]
+            if type(cmds).__name__ == 'list':
+                for cmd in cmds:
+                    os.system(cmd)
+            else:
+                os.system(commands[command])
         except KeyError:
             typer.secho("CommandNotFound: Please make sure that you have assigned a command to this name in 'cmd.yaml'", fg=typer.colors.RED, bold=True)
