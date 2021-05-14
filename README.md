@@ -16,6 +16,7 @@ $ poetry add pcmd
 
 ---> 100%
 ```
+or download the  files from the releases :bookmark:.
 ### Building a cmd.yaml file :hammer:
 Create a file `cmd.yaml`.  
 The key will be your custom name and value will be the terminal command.
@@ -31,11 +32,11 @@ Now (from the same directory where `cmd.yaml` exists)  type
 $ pcmd run print-hi
 ```
 It outputs
-```console
+```text
 $ An example of a long command depicting usage of pcmd!
 ```
 
-### Running multiple command lines
+### Running multiple command lines :octopus:
 You can also run multiple commands from a single custom command using **pcmd**
 ```yaml
 # cmd.yaml
@@ -45,7 +46,7 @@ get-started:
   - pip install -r requirements.txt
   - python run.py
 ```
-> Warning: Commands which involve _changes or reload of terminal_(Eg: _activating enviroments_ using `./env/Scripts/activate`) **may not work** due to break in command flow.
+##### :warning: WARNING: Commands which involve *changes or reload of terminal* (Eg: _activating enviroments_ using `/env/Scripts/activate`) **may not work** due to break in command flow.
 ```bash
 $ pcmd run get-started
 ```
