@@ -2,7 +2,7 @@ from pcmd import __version__
 from pcmd.main import get_commands
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert __version__ == '1.1.0'
 
 def test_get_commands_1():
     assert type(get_commands()).__name__ == "dict"
@@ -17,3 +17,5 @@ def test_get_commands_3():
         a = None
     assert a == None
 
+def test_get_commands_4():
+    assert type(get_commands()['list']).__name__ == "list"
