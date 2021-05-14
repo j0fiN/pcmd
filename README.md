@@ -22,7 +22,7 @@ The key will be your custom name and value will be the terminal command.
 ```<custom name>: <terminal command>```  
 Here we see a simple example
 ```yaml
-print-hi: echo "Hi from pcmd!"
+print-hi: echo "An example of a long command depicting usage of pcmd!"
 dir-check: dir
 ```
 ### That's it! :tada:
@@ -31,8 +31,23 @@ Now (from the same directory where `cmd.yaml` exists)  type
 $ pcmd run print-hi
 ```
 It outputs
+```console
+$ An example of a long command depicting usage of pcmd!
+```
+
+### Running multiple command lines
+You can also run multiple commands from a single custom command using **pcmd**
+```yaml
+# cmd.yaml
+get-started:
+  - git clone https://github.com/j0fiN/Iris-Says.git
+  - cd Iris-Says
+  - pip install -r requirements.txt
+  - python run.py
+```
+> Warning: Commands which involve _changes or reload of terminal_(Eg: _activating enviroments_ using `./env/Scripts/activate`) **may not work** due to break in command flow.
 ```bash
-$ Hi from pcmd!
+$ pcmd run get-started
 ```
 
 ### For more docs :page_facing_up:
@@ -41,7 +56,7 @@ $ pcmd
 ```
 
 ## Usage 🧰
-> The main usage where you can ***pcmd*** is during developement, where multiple long terminal commands may be used repeatedtly in different order.It can be frustating to type long commands when you start up the terminal for the day or when a terminal shuts down due to unknown reasons!  
+> The main usage where you can ***pcmd*** is during developement, where multiple long terminal commands may be used repeatedtly in different order. It can be frustating to type long commands when you start up the terminal for the day or when a terminal shuts down due to unknown reasons!  
 
 ---
 <p align=center>Do throw a :star: if you like the package!</p>
