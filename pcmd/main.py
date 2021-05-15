@@ -2,21 +2,17 @@ import yaml
 import typer
 import os
 from pathlib import Path
-
+import subprocess
 app = typer.Typer()
+
 
 
 @app.callback()
 def callback():
     """
-    A super simple terminal command shortener
+    A super simple terminal command shortener\n
 
-    Simple example:
-    1. Create file cmd.yaml and type\n
-        hi: echo "Hi from pcmd!"
-
-    2. From the same dir, in your terminal, type\n
-        pcmd run hi
+    For docs : https://github.com/j0fiN/pcmd
     """
 
 def get_commands():
@@ -29,6 +25,9 @@ def get_commands():
 
 @app.command()
 def run(command: str):
+    """
+    run command - run terminal command/ runs multiple command chains
+    """
     commands = get_commands()
     if commands is None:
         typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", fg=typer.colors.RED, bold=True)
@@ -37,8 +36,20 @@ def run(command: str):
             cmds = commands[command]
             if type(cmds).__name__ == 'list':
                 for cmd in cmds:
-                    os.system(cmd)
+                    subprocess.run(cmd.split(" "), shell=True)
             else:
                 os.system(commands[command])
         except KeyError:
             typer.secho("CommandNotFound: Please make sure that you have assigned a command to this name in 'cmd.yaml'", fg=typer.colors.RED, bold=True)
+
+@app.command()
+def list():
+    """
+    list command - outputs the cmd.yaml 
+    """
+    commands = get_commands()
+    if commands is None:
+        typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", fg=typer.colors.RED, bold=True)
+    typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\cmd.yaml".replace('\\\\', '\\'), fg=typer.colors.BLUE, bold=True)
+    typer.echo(yaml.dump(commands))
+        
