@@ -18,4 +18,4 @@ def test_get_commands_3():
     assert a == None
 
 def test_get_commands_4():
-    assert type(get_commands()['list']).__name__ == "list"
+    assert type(get_commands()['lst']).__name__ == "list"
