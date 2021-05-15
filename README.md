@@ -1,12 +1,11 @@
-# pcmd
 <figure>
-  <img src=""/>
-  <figcaption>A super simple terminal command shortener Cli.</figcaption>
-</figure>
-<img alt="PyPI" src="https://img.shields.io/pypi/v/pcmd?logo=pypi&logoColor=white&style=flat-square"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pcmd?style=flat-square"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pcmd?logo=python&logoColor=white&style=flat-square">  
+  <img src="https://github.com/j0fiN/pcmd/blob/main/assets/logo_banner.svg"/>
+</figure>  
+<img alt="PyPI" src="https://img.shields.io/pypi/v/pcmd?logo=pypi&logoColor=white&style=flat-square"><img alt="PyPI - License" src="https://img.shields.io/pypi/l/pcmd?style=flat-square"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pcmd?logo=python&logoColor=white&style=flat-square">  
+
+#### A super simple terminal command shortener Cli :fish:
+  
  
-
-
 ## Usage 🧰
 During developement, it can be frustating to type long commands when you start up the terminal for the day or when a terminal shuts down due to unknown reasons!
 There might be times when you had to type a set of long terminal commands repeatedly.  
@@ -66,6 +65,8 @@ Now type,
 ```sh-session
 pcmd run git-list
 ```
+### `pcmd list` command :blowfish:
+This command outputs contents inside `cmd.yaml` fle
 
 ### For more docs :page_facing_up:
 ```sh-session
