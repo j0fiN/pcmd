@@ -1,6 +1,10 @@
 # pcmd
+<figure>
+  <img src=""/>
+  <figcaption>A super simple terminal command shortener Cli.</figcaption>
+</figure>
 <img alt="PyPI" src="https://img.shields.io/pypi/v/pcmd?logo=pypi&logoColor=white&style=flat-square"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pcmd?style=flat-square"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pcmd?logo=python&logoColor=white&style=flat-square">  
- _A super simple terminal command shortener Cli._ :tada:
+ 
 
 
 ## Usage 🧰
@@ -56,8 +60,7 @@ git-list:
   - git commit -m 'Added feature to run multiple commands'
   - git push
 ```
-> :warning: WARNING: Commands which involve *changes or reload of terminal* (Eg: `cd` and _activating enviroments_ using `/env/Scripts/activate`) **may NOT WORK** due to break in command flow.  
-> It will be fixed in the next version.  
+> :warning: WARNING: Commands which involve *changes or reload of terminal* (Eg: `cd` and _activating enviroments_ using `/env/Scripts/activate`) **may NOT WORK**. 
 
 Now type,  
 ```sh-session
