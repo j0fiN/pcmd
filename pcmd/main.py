@@ -5,7 +5,20 @@ from pathlib import Path
 import subprocess
 app = typer.Typer()
 
+egg = """
+|\   \\\\__     o
+| \_/    o \    o 
+> _   (( <_  oo  
+| / \__+___/      
+|/     |/
+                             _
+ _ __    ___  _ __ ___    __| |
+| '_ \  / __|| '_ ` _ \  / _` |
+| |_) || (__ | | | | | || (_| |
+| .__/  \___||_| |_| |_| \__,_|
+|_|
 
+"""
 
 @app.callback()
 def callback():
@@ -50,6 +63,16 @@ def list():
     commands = get_commands()
     if commands is None:
         typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", fg=typer.colors.RED, bold=True)
-    typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\cmd.yaml".replace('\\\\', '\\'), fg=typer.colors.BLUE, bold=True)
+    typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\cmd.yaml".replace('\\\\', '\\'), fg=typer.colors.MAGENTA, bold=True)
     typer.echo(yaml.dump(commands))
         
+
+@app.command()
+def fish():
+    """
+    For fun
+    """
+    typer.secho(egg, fg=typer.colors.MAGENTA, bold=True)
+
+if __name__ == "__main__":
+    app()

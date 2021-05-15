@@ -1,7 +1,7 @@
 main-hi: echo "Hi main"
 test: dir
 doc: poetry show typer
-lala: poetry run python pcmd/main.py run asd
+lala: poetry run python pcmd/main.py fish
 lst:
   - echo "git init"
   - echo "git add ."
