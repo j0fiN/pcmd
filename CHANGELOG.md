@@ -1,4 +1,9 @@
-### v1.2.0
+## v1.2.0
+### :boom: `list` command, :page_facing_up: github wiki docs and :egg: easter egg
+> Now `subprocess` module used to run commands (:coffin: `os.system()` removed)
+
+- :bookmark: Changed to v1.2.0
+- :memo: Included links to github
 - :bookmark: Setting up for package build
 - :pencil2: typos and grammar
 - :fire: Remove :construction_worker: github workflow
@@ -14,7 +19,8 @@
 - :fish: Added lala
 - :camera: Added logo
 
-### v1.1.0
+## v1.1.0
+### :boom: Running Multiple commands using a simgle user-defined command
 - :memo: Updated Warning :warning: and Usage 🧰
 - :memo: Updated docs
 - :white_check_mark: Added test for multiple commands.
@@ -22,7 +28,8 @@
 - :memo: Updated docs for git and pypi.
 - :hammer: Added feature of running multiple commands.
 
-### v1.0.0
+## v1.0.0
+### :fish: pcmd
 - :pencil2: Typo
 - :pencil2: :memo: Updated and fixed typos
 - :memo: Updated readme.
