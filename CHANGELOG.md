@@ -1,5 +1,11 @@
+## v1.2.2
+### :memo: :pencil2: Documentation fixes and :bug: bug fix
+> Pypi readme link fixed, changelogs typo fixed. App call removed.
+ - :bookmark: v1.2.2 resolved docs and app call
+ - :ambulance: Removed app call
+ - :pencil2: Fixed broken source code link
 ## v1.2.1
-### `bug` Bug fix in list
+### :bug: Bug fix in `list` command
  - :bookmark: v1.2.1 resolved list command bug 
  - :ambulance: list function else case
 
