@@ -63,10 +63,15 @@ def list():
     commands = get_commands()
     if commands is None:
         typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", fg=typer.colors.RED, bold=True)
-    typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\cmd.yaml".replace('\\\\', '\\'), fg=typer.colors.MAGENTA, bold=True)
-    typer.echo(yaml.dump(commands))
+    else:
+        typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\cmd.yaml".replace('\\\\', '\\'), fg=typer.colors.MAGENTA, bold=True)
+        typer.echo(yaml.dump(commands))
         
 
 @app.command()
 def fish():
     typer.secho(egg, fg=typer.colors.MAGENTA, bold=True)
+
+
+if __name__ == "__main__":
+    app()
