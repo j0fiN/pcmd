@@ -1,3 +1,7 @@
+## v1.2.3
+### :ambulance: check for `cmd.yaml` FileNotFound issue
+ - :bookmark: v1.2.3 path bug fixed
+ - :truck: Changed path to palin file name.
 ## v1.2.2
 ### :memo: :pencil2: Documentation fixes and :bug: bug fix
 > Pypi readme link fixed, changelogs typo fixed. App call removed.
