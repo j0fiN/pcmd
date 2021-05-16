@@ -1,3 +1,8 @@
+## v1.2.1
+### `bug` Bug fix in list
+ - :bookmark: v1.2.1 resolved list command bug 
+ - :ambulance: list function else case
+
 ## v1.2.0
 ### :boom: `list` command, :page_facing_up: github wiki docs and :egg: easter egg
 > Now `subprocess` module used to run commands (:coffin: `os.system()` removed)
