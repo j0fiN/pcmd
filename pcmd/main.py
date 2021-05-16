@@ -71,7 +71,3 @@ def list():
 @app.command()
 def fish():
     typer.secho(egg, fg=typer.colors.MAGENTA, bold=True)
-
-
-if __name__ == "__main__":
-    app()
