@@ -7,20 +7,20 @@
   
  
 ## Usage 🧰
-During developement, it can be frustating to type long commands when you start up the terminal for the day or when a terminal shuts down due to unknown reasons!
+During development, it can be frustrating to type long commands when you start up the terminal for the day or when a terminal shuts down due to unknown reasons!
 There might be times when you had to type a set of long terminal commands repeatedly.  
 
 > For all these problems...  
   
 ***pcmd*** comes in handy :+1:  
-- It helps to execute commands with user-define name :fish:
+- It helps to execute commands with the user-define name :fish:
 - It helps to execute multiple commands with just a single command of user-defined name :octopus:
 
 ## Getting started :rocket:
 ### Install the package :package:
 Using _pip_
 ```sh-session
-$ pip insall pcmd
+$ pip install pcmd
 
 ---> 100%
 ```
@@ -33,11 +33,11 @@ $ poetry add pcmd
 or download the  files from the [releases](https://github.com/j0fiN/pcmd/releases) :bookmark:.
 ### Building a `cmd.yaml` file :hammer:
 Create a file `cmd.yaml` (make sure you create it with a proper text editor).  
-The key will be your custom name and value will be the terminal command.  
+The key will be your custom name and the value will be the terminal command.  
 ```<custom name>: <terminal command>```  
 Here we see a simple example,
 ```yaml
-print-hi: echo "An example of a long command depicting usage of pcmd!"
+print-hi: echo "An example of a long command depicting the usage of pcmd!"
 dir-check: dir
 ```
 ### That's it! :fish:
@@ -47,7 +47,7 @@ pcmd run print-hi
 ```
 It outputs
 ```text
-$ An example of a long command depicting usage of pcmd!
+$ An example of a long command depicting the usage of pcmd!
 ```
 
 ### Running multiple command lines :octopus:
@@ -66,7 +66,7 @@ Now type,
 pcmd run git-list
 ```
 ### `pcmd list` command :blowfish:
-This command outputs contents inside `cmd.yaml` fle
+This command outputs contents inside `cmd.yaml` file
 
 ### For more docs :page_facing_up:
 ```sh-session
