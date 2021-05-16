@@ -9,3 +9,4 @@ lst:
   - echo "git push"
 
 asd: env\Scripts\activate.bat
+tests: poetry run pytest
