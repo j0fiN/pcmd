@@ -30,7 +30,7 @@ def callback():
 
 def get_commands():
     try:
-        with open(os. getcwd()+'\\cmd.yaml') as f:
+        with open('cmd.yaml') as f:
             data = yaml.load(f, Loader=yaml.FullLoader)
             return data
     except FileNotFoundError:
