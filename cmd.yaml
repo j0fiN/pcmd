@@ -1,5 +1,6 @@
 main-hi: echo "Hi main"
-test: dir
+dir: dir
+test: poetry run pytest
 show: poetry show pcmd
 lala: poetry run python pcmd/main.py fish
 list:
