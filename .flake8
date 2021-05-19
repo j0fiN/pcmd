@@ -1,0 +1,9 @@
+[flake8]
+ignore = D203,W605,W291,E501
+exclude = 
+    .git,
+    assets,
+    __pycache__,
+    build,
+    dist
+max-complexity = 10
