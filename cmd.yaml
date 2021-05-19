@@ -1,12 +1,9 @@
 main-hi: echo "Hi main"
 test: dir
-doc: poetry show typer
+show: poetry show pcmd
 lala: poetry run python pcmd/main.py fish
-lst:
+list:
   - echo "git init"
   - echo "git add ."
   - echo "git commit -m 'Added feature to run multiple commands'
   - echo "git push"
-
-asd: env\Scripts\activate.bat
-tests: poetry run pytest
