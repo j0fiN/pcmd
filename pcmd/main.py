@@ -1,7 +1,6 @@
 import yaml
 import typer
 import os
-from pathlib import Path
 import subprocess
 app = typer.Typer()
 
@@ -20,6 +19,7 @@ egg = """
 
 """
 
+
 @app.callback()
 def callback():
     """
@@ -27,6 +27,7 @@ def callback():
 
     For docs : https://github.com/j0fiN/pcmd
     """
+
 
 def get_commands():
     try:
@@ -36,6 +37,7 @@ def get_commands():
     except FileNotFoundError:
         return None
 
+
 @app.command()
 def run(command: str):
     """
@@ -43,7 +45,8 @@ def run(command: str):
     """
     commands = get_commands()
     if commands is None:
-        typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", fg=typer.colors.RED, bold=True)
+        typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", 
+                    fg=typer.colors.RED, bold=True)
     else:
         try:
             cmds = commands[command]
@@ -53,7 +56,9 @@ def run(command: str):
             else:
                 os.system(commands[command])
         except KeyError:
-            typer.secho("CommandNotFound: Please make sure that you have assigned a command to this name in 'cmd.yaml'", fg=typer.colors.RED, bold=True)
+            typer.secho("CommandNotFound: Please make sure that you have assigned a command to this name in 'cmd.yaml'", 
+                        fg=typer.colors.RED, bold=True)
+
 
 @app.command()
 def list():
@@ -66,7 +71,7 @@ def list():
     else:
         typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\cmd.yaml".replace('\\\\', '\\'), fg=typer.colors.MAGENTA, bold=True)
         typer.echo(yaml.dump(commands))
-        
+
 
 @app.command()
 def fish():
