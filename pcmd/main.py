@@ -1,7 +1,8 @@
 import yaml
 import typer
-import os
+import os  # type: ignore
 import subprocess
+from typing import Dict, List, Optional, Union
 app = typer.Typer()
 
 egg = """
@@ -21,7 +22,7 @@ egg = """
 
 
 @app.callback()
-def callback():
+def callback() -> None:
     """
     A super simple terminal command shortener\n
 
@@ -29,7 +30,7 @@ def callback():
     """
 
 
-def get_commands():
+def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
     try:
         with open('cmd.yaml') as f:
             data = yaml.load(f, Loader=yaml.FullLoader)
@@ -39,7 +40,7 @@ def get_commands():
 
 
 @app.command()
-def run(command: str):
+def run(command: str) -> None :
     """
     run command - run terminal command/ runs multiple command chains
     """
@@ -54,14 +55,14 @@ def run(command: str):
                 for cmd in cmds:
                     subprocess.run(cmd.split(" "), shell=True)
             else:
-                os.system(commands[command])
+                os.system(commands[command])  # type: ignore
         except KeyError:
             typer.secho("CommandNotFound: Please make sure that you have assigned a command to this name in 'cmd.yaml'", 
                         fg=typer.colors.RED, bold=True)
 
 
 @app.command()
-def list():
+def list() -> None:
     """
     list command - outputs the cmd.yaml 
     """
@@ -74,5 +75,5 @@ def list():
 
 
 @app.command()
-def fish():
+def fish() -> None:
     typer.secho(egg, fg=typer.colors.MAGENTA, bold=True)
