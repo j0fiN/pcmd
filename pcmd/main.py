@@ -94,9 +94,9 @@ def list(
                     "your file name is 'cmd.yaml'",
                     fg=typer.colors.RED, bold=True)
     else:
-        typer.secho(f"\t=======PCMD=======\nFile Path : {os. getcwd()}\\"
+        typer.secho(f"\t=======PCMD=======\nPath\t: {os. getcwd()}\\"
                     "cmd.yaml\n".replace('\\\\', '\\'),
-                    fg=typer.colors.MAGENTA, bold=True)
+                    fg=typer.colors.BLUE, bold=True)
         if pretty:
             prettier(commands)
         else:
@@ -107,7 +107,7 @@ def list(
 
 @app.command()
 def fish() -> None:
-    typer.secho(egg, fg=typer.colors.MAGENTA, bold=True)
+    typer.secho(egg, fg=typer.colors.CYAN, bold=True)
 
 
 app()
