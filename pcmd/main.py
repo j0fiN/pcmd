@@ -39,21 +39,22 @@ def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
     except FileNotFoundError:
         return None
 
+
 def prettier(commands: dict) -> None:
     for key in commands:
         if type(commands[key]).__name__ == 'list':
 
             typer.secho(f"{key}\t: ",
-                    fg=typer.colors.BLUE, bold=True)
+                        fg=typer.colors.BLUE, bold=True)
             for command in commands[key]:
                 typer.secho(f"\t- {command}",
-                    fg=typer.colors.CYAN, bold=True)
+                            fg=typer.colors.CYAN, bold=True)
         else:
-            pretty_key = typer.style(f"{key}\t: ", 
-                                     fg=typer.colors.BLUE, 
+            pretty_key = typer.style(f"{key}\t: ",
+                                     fg=typer.colors.BLUE,
                                      bold=True)
-            pretty_command = typer.style(commands[key], 
-                                         fg=typer.colors.CYAN, 
+            pretty_command = typer.style(commands[key],
+                                         fg=typer.colors.CYAN,
                                          bold=True)
             typer.echo(pretty_key + pretty_command)
 
@@ -109,50 +110,47 @@ def list(
 @app.command()
 def inspect():
     """checks if cmd.yaml exists and validates it"""
-    typer.secho("PCMD Inspection : ", fg=typer.colors.BLUE, 
+    typer.secho("PCMD Inspection : ", fg=typer.colors.BLUE,
                 bold=True)
     if os.path.exists('cmd.yaml'):
-        typer.secho("\t'cmd.yaml' file found!\n", 
-                    fg=typer.colors.GREEN, 
+        typer.secho("\t'cmd.yaml' file found!\n",
+                    fg=typer.colors.GREEN,
                     bold=True)
         try:
             with open('cmd.yaml') as f:
                 data = yaml.load(f, Loader=yaml.FullLoader)
                 if data is not None:
-                    typer.secho("\t'cmd.yaml' is valid!", 
-                                fg=typer.colors.GREEN, 
+                    typer.secho("\t'cmd.yaml' is valid!",
+                                fg=typer.colors.GREEN,
                                 bold=True)
                 else:
-                    typer.secho("\t'cmd.yaml' is empty. Please enter any command into the file.", 
-                                fg=typer.colors.YELLOW, 
+                    typer.secho("\t'cmd.yaml' is empty. Please "
+                                "enter any command into the file.",
+                                fg=typer.colors.YELLOW,
                                 bold=True)
 
         except yaml.YAMLError as e:
-            typer.secho(f"\tERROR in file : \n{e}", 
-                        fg=typer.colors.RED, 
+            typer.secho(f"\tERROR in file : \n{e}",
+                        fg=typer.colors.RED,
                         bold=True)
-        
         except (UnicodeDecodeError, yaml.reader.ReaderError) as e:
-            typer.secho(f"\tERROR in file : /n/t{e}", 
-                        fg=typer.colors.RED, 
+            typer.secho(f"\tERROR in file : /n/t{e}",
+                        fg=typer.colors.RED,
                         bold=True)
-            typer.secho("INFO : Delete the file and type " 
-                        "'pcmd init' to create cmd.yaml file", 
-                        fg=typer.colors.CYAN, 
+            typer.secho("INFO : Delete the file and type "
+                        "'pcmd init' to create cmd.yaml file",
+                        fg=typer.colors.CYAN,
                         bold=True)
     else:
-        typer.secho("'cmd.yaml' file NOT found", 
-                     fg=typer.colors.RED, 
-                     bold=True)
-        typer.secho("INFO : Type 'pcmd init' to create cmd.yaml file", 
-                     fg=typer.colors.CYAN, 
-                     bold=True)
+        typer.secho("'cmd.yaml' file NOT found",
+                    fg=typer.colors.RED,
+                    bold=True)
+        typer.secho("INFO : Type 'pcmd init' to create cmd.yaml file",
+                    fg=typer.colors.CYAN,
+                    bold=True)
 
 
 @app.command()
 def fish() -> None:
     """PCMD"""
     typer.secho(egg, fg=typer.colors.CYAN, bold=True)
-
-
-app()
