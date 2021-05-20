@@ -8,3 +8,12 @@ list:
   - echo "git add ."
   - echo "git commit -m 'Added feature to run multiple commands'
   - echo "git push"
+
+check:
+  - poetry run pytest
+  - echo ----------------------
+  - echo Flake test
+  - flake8
+  - echo ----------------------
+  - echo mypy test
+  - mypy .
