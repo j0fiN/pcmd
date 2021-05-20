@@ -77,7 +77,9 @@ def list() -> None:
         typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\"
                     "cmd.yaml".replace('\\\\', '\\'),
                     fg=typer.colors.MAGENTA, bold=True)
-        typer.echo(yaml.dump(commands))
+        typer.echo(yaml.dump(commands, indent=4,
+                             explicit_start=True,
+                             explicit_end=True))
 
 
 @app.command()
