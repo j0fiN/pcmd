@@ -38,6 +38,24 @@ def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
     except FileNotFoundError:
         return None
 
+def prettier(commands: dict) -> None:
+    for key in commands:
+        if type(commands[key]).__name__ == 'list':
+
+            typer.secho(f"{key}\t: ",
+                    fg=typer.colors.BLUE, bold=True)
+            for command in commands[key]:
+                typer.secho(f"\t- {command}",
+                    fg=typer.colors.CYAN, bold=True)
+        else:
+            pretty_key = typer.style(f"{key}\t: ", 
+                                     fg=typer.colors.BLUE, 
+                                     bold=True)
+            pretty_command = typer.style(commands[key], 
+                                         fg=typer.colors.CYAN, 
+                                         bold=True)
+            typer.echo(pretty_key + pretty_command)
+
 
 @app.command()
 def run(command: str) -> None:
@@ -64,7 +82,9 @@ def run(command: str) -> None:
 
 
 @app.command()
-def list() -> None:
+def list(
+    pretty: bool = typer.Option(False, "--pretty", "-p")
+) -> None:
     """
     list command - outputs the cmd.yaml
     """
@@ -74,14 +94,20 @@ def list() -> None:
                     "your file name is 'cmd.yaml'",
                     fg=typer.colors.RED, bold=True)
     else:
-        typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\"
-                    "cmd.yaml".replace('\\\\', '\\'),
+        typer.secho(f"\t=======PCMD=======\nFile Path : {os. getcwd()}\\"
+                    "cmd.yaml\n".replace('\\\\', '\\'),
                     fg=typer.colors.MAGENTA, bold=True)
-        typer.echo(yaml.dump(commands, indent=4,
-                             explicit_start=True,
-                             explicit_end=True))
+        if pretty:
+            prettier(commands)
+        else:
+            typer.echo(yaml.dump(commands, indent=4,
+                                 explicit_start=True,
+                                 explicit_end=True))
 
 
 @app.command()
 def fish() -> None:
     typer.secho(egg, fg=typer.colors.MAGENTA, bold=True)
+
+
+app()
