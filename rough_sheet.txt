@@ -1,0 +1,3 @@
+typer.echo(yaml.dump(commands, indent=4, 
+                    explicit_start=True, 
+                    explicit_end=True))
