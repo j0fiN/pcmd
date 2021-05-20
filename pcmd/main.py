@@ -40,7 +40,7 @@ def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
 
 
 @app.command()
-def run(command: str) -> None :
+def run(command: str) -> None:
     """
     run command - run terminal command/ runs multiple command chains
     """
