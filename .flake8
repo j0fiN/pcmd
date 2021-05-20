@@ -1,5 +1,5 @@
 [flake8]
-ignore = D203,W605,W291,E501
+ignore = D203
 exclude = 
     .git,
     assets,
