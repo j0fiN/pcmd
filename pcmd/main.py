@@ -112,7 +112,7 @@ def inspect():
     typer.secho("PCMD Inspection : ", fg=typer.colors.BLUE, 
                 bold=True)
     if os.path.exists('cmd.yaml'):
-        typer.secho("\t'cmd.yaml' file found!", 
+        typer.secho("\t'cmd.yaml' file found!\n", 
                     fg=typer.colors.GREEN, 
                     bold=True)
         try:
@@ -128,7 +128,18 @@ def inspect():
                                 bold=True)
 
         except yaml.YAMLError as e:
-            print(e)
+            typer.secho(f"\tERROR in file : \n{e}", 
+                        fg=typer.colors.RED, 
+                        bold=True)
+        
+        except (UnicodeDecodeError, yaml.reader.ReaderError) as e:
+            typer.secho(f"\tERROR in file : /n/t{e}", 
+                        fg=typer.colors.RED, 
+                        bold=True)
+            typer.secho("INFO : Delete the file and type " 
+                        "'pcmd init' to create cmd.yaml file", 
+                        fg=typer.colors.CYAN, 
+                        bold=True)
     else:
         typer.secho("'cmd.yaml' file NOT found", 
                      fg=typer.colors.RED, 
