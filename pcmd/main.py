@@ -24,6 +24,7 @@ egg = """
 @app.callback()
 def callback() -> None:
     """
+    PCMD\n
     A super simple terminal command shortener\n
 
     For docs : https://github.com/j0fiN/pcmd
@@ -60,7 +61,7 @@ def prettier(commands: dict) -> None:
 @app.command()
 def run(command: str) -> None:
     """
-    run command - run terminal command/ runs multiple command chains
+    run terminal command / runs multiple command chains
     """
     commands = get_commands()
     if commands is None:
@@ -86,7 +87,7 @@ def list(
     pretty: bool = typer.Option(False, "--pretty", "-p")
 ) -> None:
     """
-    list command - outputs the cmd.yaml
+    outputs the cmd.yaml
     """
     commands = get_commands()
     if commands is None:
@@ -107,6 +108,7 @@ def list(
 
 @app.command()
 def fish() -> None:
+    """PCMD"""
     typer.secho(egg, fg=typer.colors.CYAN, bold=True)
 
 
