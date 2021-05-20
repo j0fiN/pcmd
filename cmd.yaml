@@ -5,7 +5,7 @@ dir: dir
 # Commands of pytest
 test: poetry run pytest
 show: poetry show pcmd
-lala: poetry run python pcmd/main.py fish
+lala: poetry run python pcmd/main.py list -p
 
 # Multiple commands demonstration
 list:
