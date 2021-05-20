@@ -107,6 +107,38 @@ def list(
 
 
 @app.command()
+def inspect():
+    """checks if cmd.yaml exists and validates it"""
+    typer.secho("PCMD Inspection : ", fg=typer.colors.BLUE, 
+                bold=True)
+    if os.path.exists('cmd.yaml'):
+        typer.secho("\t'cmd.yaml' file found!", 
+                    fg=typer.colors.GREEN, 
+                    bold=True)
+        try:
+            with open('cmd.yaml') as f:
+                data = yaml.load(f, Loader=yaml.FullLoader)
+                if data is not None:
+                    typer.secho("\t'cmd.yaml' is valid!", 
+                                fg=typer.colors.GREEN, 
+                                bold=True)
+                else:
+                    typer.secho("\t'cmd.yaml' is empty. Please enter any command into the file.", 
+                                fg=typer.colors.YELLOW, 
+                                bold=True)
+
+        except yaml.YAMLError as e:
+            print(e)
+    else:
+        typer.secho("'cmd.yaml' file NOT found", 
+                     fg=typer.colors.RED, 
+                     bold=True)
+        typer.secho("INFO : Type 'pcmd init' to create cmd.yaml file", 
+                     fg=typer.colors.CYAN, 
+                     bold=True)
+
+
+@app.command()
 def fish() -> None:
     """PCMD"""
     typer.secho(egg, fg=typer.colors.CYAN, bold=True)
