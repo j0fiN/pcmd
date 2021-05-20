@@ -6,16 +6,16 @@ from typing import Dict, List, Optional, Union
 app = typer.Typer()
 
 egg = """
-|\   \\\\__     o
-| \_/    o \    o 
-> _   (( <_  oo  
-| / \__+___/      
+|\\   \\\\\\\\__     o
+| \\_/    o \\    o
+ > _   (( <_  oo
+| / \\__+___/
 |/     |/
                              _
  _ __    ___  _ __ ___    __| |
-| '_ \  / __|| '_ ` _ \  / _` |
+| '_ \\  / __|| '_ ` _ \\  / _` |
 | |_) || (__ | | | | | || (_| |
-| .__/  \___||_| |_| |_| \__,_|
+| .__/  \\___||_| |_| |_| \\__,_|
 |_|
 
 """
@@ -46,7 +46,8 @@ def run(command: str) -> None:
     """
     commands = get_commands()
     if commands is None:
-        typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", 
+        typer.secho("FileNotFound: Please make sure that your "
+                    "file name is 'cmd.yaml'",
                     fg=typer.colors.RED, bold=True)
     else:
         try:
@@ -57,20 +58,25 @@ def run(command: str) -> None:
             else:
                 subprocess.run(cmd.split(" "), shell=True)
         except KeyError:
-            typer.secho("CommandNotFound: Please make sure that you have assigned a command to this name in 'cmd.yaml'", 
+            typer.secho("CommandNotFound: Please make sure that you have"
+                        " assigned a command to this name in 'cmd.yaml'",
                         fg=typer.colors.RED, bold=True)
 
 
 @app.command()
 def list() -> None:
     """
-    list command - outputs the cmd.yaml 
+    list command - outputs the cmd.yaml
     """
     commands = get_commands()
     if commands is None:
-        typer.secho("FileNotFound: Please make sure that your file name is 'cmd.yaml'", fg=typer.colors.RED, bold=True)
+        typer.secho("FileNotFound: Please make sure that "
+                    "your file name is 'cmd.yaml'",
+                    fg=typer.colors.RED, bold=True)
     else:
-        typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\cmd.yaml".replace('\\\\', '\\'), fg=typer.colors.MAGENTA, bold=True)
+        typer.secho(f"PCMD\nFile Path : {os. getcwd()}\\"
+                    "cmd.yaml".replace('\\\\', '\\'),
+                    fg=typer.colors.MAGENTA, bold=True)
         typer.echo(yaml.dump(commands))
 
 
