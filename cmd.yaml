@@ -1,14 +1,20 @@
+# Dummy Commands
 main-hi: echo "Hi main"
 dir: dir
+
+# Commands of pytest
 test: poetry run pytest
 show: poetry show pcmd
 lala: poetry run python pcmd/main.py fish
+
+# Multiple commands demonstration
 list:
   - echo "git init"
   - echo "git add ."
   - echo "git commit -m 'Added feature to run multiple commands'
   - echo "git push"
 
+# Checks before commits
 check:
   - poetry run pytest
   - echo ----------------------
