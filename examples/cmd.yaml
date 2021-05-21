@@ -1,0 +1,6 @@
+git:
+ - git clone <link>
+ - cd <project name> # Not yet built
+ - nodemon start
+
+ # More commands will be updated.
