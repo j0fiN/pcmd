@@ -5,6 +5,7 @@
 - [ ] Ordered dictionary
 - [ ] Update tests
 - [ ] Add extra deps
+- [ ] Error handling when cmd.yaml is empty.
 
 > :wrench:
 - [ ] codecov
@@ -14,7 +15,7 @@
 - [ ] Contribution code and extras.
 - [ ] talking about the dependencies also
 - [ ] Write a blog too.
-
+- [ ] Shields, Pypi, gitmoji, CI, tests, docs, love of CODE.
 > :white_check_mark:
 - [x] --pretty or -p flag
 - [x] inspect command
