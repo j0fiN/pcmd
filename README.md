@@ -1,5 +1,5 @@
 <figure>
-  <img src="https://github.com/j0fiN/pcmd/blob/main/assets/logo_banner.svg"/>
+  <img src="https://github.com/j0fiN/pcmd/blob/main/docs/assets/logo_banner.svg"/>
 </figure>  
 <img alt="PyPI" src="https://img.shields.io/pypi/v/pcmd?logo=pypi&logoColor=white&style=flat-square"><img alt="PyPI - License" src="https://img.shields.io/pypi/l/pcmd?style=flat-square"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pcmd?logo=python&logoColor=white&style=flat-square">  
 
