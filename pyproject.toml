@@ -19,6 +19,7 @@ pcmd = "pcmd.main:app"
 python = "^3.8"
 typer = "^0.3.2"
 PyYAML = "^5.4.1"
+mkdocs-material = {version = "^7.1.5", extras = ["doc"]}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
