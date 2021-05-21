@@ -3,9 +3,8 @@ nav:
     - Overview: 'index.md'
     - User Guide: 'user_guide.md'
     - Examples: 'examples.md'
-    - Design: 'design.md'
-    - Contribution: 'developement-contribution.md'
-    - Resouces: 'resources.md'
+    - Design and Inspiration: 'design.md'
+    - Development - Contributing: 'dev.md'
     - Releases: 'releases.md'
 
 extra_css:
