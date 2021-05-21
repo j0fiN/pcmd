@@ -151,6 +151,17 @@ def inspect():
 
 
 @app.command()
+def init():
+    """Creates a cmd.yaml (if file exists, deletes and creates it)"""
+    if os.path.exists('cmd.yaml'):
+        os.remove("cmd.yaml")
+
+    first_command = {"hi": "echo Hi from pcmd!"}
+    with open('cmd.yaml', 'w') as f:
+        yaml.dump(first_command, f)
+
+
+@app.command()
 def fish() -> None:
     """PCMD"""
     typer.secho(egg, fg=typer.colors.CYAN, bold=True)
