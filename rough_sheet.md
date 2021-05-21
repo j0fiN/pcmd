@@ -7,9 +7,7 @@
 - [ ] Add extra deps
 
 > :wrench:
-- [ ] dependabot
 - [ ] codecov
-- [ ] discord
 
 > :memo:
 - [ ] A complete documentation in mkdocs
@@ -24,3 +22,5 @@
 - [x] clean command to clean the corrupted yaml file - changed to inspect
 - [x] init command to create a cmd.yaml file
 - [x] examples of cmd.yaml
+- [x] dependabot
+- [x] discord
