@@ -1,0 +1,53 @@
+site_name: PCMD
+nav:
+    - Overview: 'index.md'
+    - User Guide: 'user_guide.md'
+    - Examples: 'examples.md'
+    - Design: 'design.md'
+    - Contribution: 'developement-contribution.md'
+    - Resouces: 'resources.md'
+    - Releases: 'releases.md'
+
+extra_css:
+  - stylesheets/extra.css
+theme:
+  name: material
+  logo: '../assets/logo.svg'
+  favicon: ../assets/logo.svg
+  palette:
+    scheme: slate
+    primary: cyan
+    accent: cyan
+  features:
+    - navigation.instant
+    - header.autohide
+
+
+plugins:
+  - search
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/j0fiN/
+    - icon: fontawesome/regular/user
+      link: https://jofin-f-archbald.herokuapp.com/
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:jofinfab@gmail.com
+copyright: Copyright &copy; 2021 Jofin F Archbald
+repo_url: https://github.com/j0fiN/pcmd
+repo_name: j0fiN/pcmd
+
+markdown_extensions:
+  - pymdownx.highlight
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
