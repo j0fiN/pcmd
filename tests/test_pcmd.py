@@ -23,4 +23,4 @@ def test_get_commands_3():
 
 
 def test_get_commands_4():
-    assert type(get_commands()['list']).__name__ == "list"
+    assert type(get_commands()['check']).__name__ == "list"
