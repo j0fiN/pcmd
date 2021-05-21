@@ -3,4 +3,9 @@ git:
  - cd <project name> # Not yet built
  - nodemon start
 
- # More commands will be updated.
+# Multiple commands demonstration
+list:
+  - echo "git init"
+  - echo "git add ."
+  - echo "git commit -m 'Added feature to run multiple commands'
+  - echo "git push"
