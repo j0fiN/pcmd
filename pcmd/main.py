@@ -76,7 +76,7 @@ def run(command: str) -> None:
                 for cmd in cmds:
                     subprocess.run(cmd.split(" "), shell=True)
             else:
-                subprocess.run(cmd.split(" "), shell=True)
+                subprocess.run(cmds.split(" "), shell=True)
         except KeyError:
             typer.secho("CommandNotFound: Please make sure that you have"
                         " assigned a command to this name in 'cmd.yaml'",
