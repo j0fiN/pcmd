@@ -2,17 +2,14 @@
 main-hi: echo "Hi main"
 dir: dir
 
-# Commands of pytest
+# Commands of dev and pytest
 test: poetry run pytest
-show: poetry show pcmd
-lala: poetry run python pcmd/main.py list -p
-
-# Multiple commands demonstration
-list:
-  - echo "git init"
-  - echo "git add ."
-  - echo "git commit -m 'Added feature to run multiple commands'
-  - echo "git push"
+doc: poetry run mkdocs serve
+r: poetry run python pcmd/main.py run main-hi
+# i: poetry run python pcmd/main.py init
+is: poetry run python pcmd/main.py inspect
+l: poetry run python pcmd/main.py list -p
+f: poetry run python pcmd/main.py fish
 
 # Checks before commits
 check:
