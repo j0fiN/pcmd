@@ -39,6 +39,8 @@ repo_url: https://github.com/j0fiN/pcmd
 repo_name: j0fiN/pcmd
 
 markdown_extensions:
+  - pymdownx.details
+  - def_list
   - pymdownx.highlight
   - codehilite
   - pymdownx.superfences
