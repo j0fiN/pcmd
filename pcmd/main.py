@@ -169,11 +169,8 @@ def fish() -> None:
     typer.secho(egg, fg=typer.colors.CYAN, bold=True)
     conf = typer.confirm("Do you want to check PCMD docs ?")
     if conf:
-        typer.secho("Opening PCMD's docs", 
+        typer.secho("Opening PCMD's docs",
                     fg=typer.colors.CYAN, bold=True)
         typer.launch("https://github.com/j0fiN/pcmd/")
     else:
         typer.secho("Okay!", fg=typer.colors.CYAN, bold=True)
-
-    
-
