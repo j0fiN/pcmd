@@ -159,7 +159,7 @@ def init() -> None:
     first_command = {"hi": "echo Hi from pcmd!"}
     with open('cmd.yaml', 'w') as f:
         yaml.dump(first_command, f)
-    typer.secho("'cmd.yaml' Created",
+    typer.secho("'cmd.yaml' created.",
                 fg=typer.colors.CYAN, bold=True)
 
 
