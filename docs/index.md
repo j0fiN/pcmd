@@ -1,5 +1,47 @@
 # Exceptor
 <figure>
   <img src="../assets/logo_banner.svg"/>
-  <figcaption>A super simple CLI command shortner</figcaption>
+  <figcaption>A super simple terminal command shortner 🐟</figcaption>
 </figure>
+
+## About
+During development :fontawesome-solid-laptop-code:, it can be frustrating,  
+
+- to type long commands when you start up the terminal :material-console-line: for the day (or when a terminal shuts down due to unknown reasons!) or,
+- to type a set of terminal :material-console-line: commands repeatedly to do configuration, checks and so on.
+
+> For these problems...
+
+*** :fontawesome-solid-fish: pcmd*** comes in handy :thumbsup:  
+It's main features are
+
+- [x] It helps to execute commands with the user-define name :fish:  
+- [x] It helps to execute multiple commands with just a single command of user-defined name :octopus:  
+
+A single config file :octicons-file-code-16: and your ready to go :material-rocket-launch-outline: !
+
+## Installation
+
+=== "pip"
+
+    ``` bash
+    $ pip install pcmd
+
+    ---> 100%
+    ```
+
+=== "poetry"
+
+    ``` bash
+    $ poetry add pcmd
+
+    ---> 100%
+    ```
+
+!!! note
+    Make sure you install the package **globally** in your machine to 
+    use it as a *universal CLI* for all your projects.
+
+## Move on !
+Excited to work using ***:fontawesome-solid-fish: pcmd*** ?!
+Head over to the <a href="/user_guide" class="link">User Guide</a>
