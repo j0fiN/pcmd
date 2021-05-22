@@ -16,7 +16,7 @@ classifiers =  [
 pcmd = "pcmd.main:app"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.6"
 typer = "^0.3.2"
 PyYAML = "^5.4.1"
 mkdocs-material = {version = "^7.1.5", extras = ["doc"]}
