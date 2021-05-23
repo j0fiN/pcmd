@@ -40,6 +40,6 @@ jobs:
         mypy .
     - name: Test with pytest cov
       run: |
-        pytest --cov
+        pytest --cov-config=.coveragerc --cov
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1

@@ -5,10 +5,10 @@ cd-chain:
 - pcmd run main-chain
 cd-hi: cd ..
 cd-test:
-  - cd ..
-  - echo %cd%
-  - cd node-blog
-  - nodemon start
+- cd ..
+- echo %cd%
+- cd node-blog
+- nodemon start
 check:
 - poetry run pytest --cov-config=.coveragerc --cov
 - echo ----------------------
