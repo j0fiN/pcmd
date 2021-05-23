@@ -218,12 +218,12 @@ def init(force: bool = typer.Option(False, "--force", "-f")) -> None:
 def fish() -> None:
     """PCMD"""
     typer.secho(egg, fg=typer.colors.CYAN, bold=True)
-    typer.secho("Source:\thttps://github.com/j0fiN/pcmd",
+    typer.secho("Source\t:\thttps://github.com/j0fiN/pcmd",
                 fg=typer.colors.CYAN,
                 bold=True)
-    typer.secho("Pypi:\thttps://pypi.org/project/pcmd/",
+    typer.secho("Pypi\t:\thttps://pypi.org/project/pcmd/",
                 fg=typer.colors.CYAN,
                 bold=True)
-    typer.secho("Author:\thttps://jofin-f-archbald.herokuapp.com/",
+    typer.secho("Author\t:\thttps://jofin-f-archbald.herokuapp.com/",
                 fg=typer.colors.CYAN,
                 bold=True)
