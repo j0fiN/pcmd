@@ -60,7 +60,7 @@ def callback() -> None:
 def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
     try:
         with open('cmd.yaml') as f:
-            data = yaml.load(f, Loader=yaml.FullLoader)
+            data = yaml.load(f, Loader=yaml.FullLoader) or {}
             return data
     except FileNotFoundError:
         return None
@@ -134,12 +134,18 @@ def list(
         typer.secho(f"\t=======PCMD=======\nPath\t: {os. getcwd()}\\"
                     "cmd.yaml\n".replace('\\\\', '\\'),
                     fg=typer.colors.BLUE, bold=True)
-        if pretty:
-            prettier(commands)
+        if commands == {}:
+            typer.secho("\t'cmd.yaml' is empty. Please "
+                        "enter any command into the file.",
+                        fg=typer.colors.YELLOW,
+                        bold=True)
         else:
-            typer.echo(yaml.dump(commands, indent=4,
-                                 explicit_start=True,
-                                 explicit_end=True))
+            if pretty:
+                prettier(commands)
+            else:
+                typer.echo(yaml.dump(commands, indent=4,
+                                     explicit_start=True,
+                                     explicit_end=True))
 
 
 @app.command()
