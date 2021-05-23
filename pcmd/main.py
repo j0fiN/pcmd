@@ -19,8 +19,27 @@ egg = """
 |_|
 
 """
+# THESE FUNCTIONS ARE FOR TESTING PURPOSES
+def f_remove():
+    os.remove('cmd.yaml')
 
 
+def f_add(commands):
+    with open('cmd.yaml', 'w') as f:
+        yaml.dump(commands, f)
+
+
+def f_syntax_err():
+    with open('cmd.yaml', 'w') as f:
+        yaml.dump("as:-as\n-a", f)
+
+
+def f_empty():
+    with open('cmd.yaml', 'w') as f:
+        f.write("")
+
+
+# THESE FUNCTIONS ARE FOR CLI BUILD
 @app.callback()
 def callback() -> None:
     """
