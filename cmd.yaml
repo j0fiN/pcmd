@@ -33,15 +33,15 @@ check-global:
 - coverage report -m
 dir: dir
 doc: poetry run mkdocs serve
-f: poetry run python pcmd/main.py fish
-i: poetry run python pcmd/main.py init
-is: poetry run python pcmd/main.py inspect
-l: poetry run python pcmd/main.py list -p
+f: poetry run python -m pcmd fish
+i: poetry run python -m pcmd init
+is: poetry run python -m pcmd inspect
+l: poetry run python -m pcmd list -p
 main-chain:
 - echo 1
 - echo 2
 - echo hello
 main-hi: echo "Hi main"
-p: poetry run python pcmd/main.py
-r: poetry run python pcmd/main.py run cd-test
+p: poetry run python -m pcmd
+r: poetry run python -m pcmd run cd-test
 test: poetry run pytest
