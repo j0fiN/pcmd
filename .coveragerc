@@ -5,7 +5,7 @@ source =
     tests
 
 omit =
-    /tests/*
+    pcmd/__main__.py
     /Users/**/*
     */site-packages/**/*
 
