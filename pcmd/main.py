@@ -19,6 +19,8 @@ egg = """
 |_|
 
 """
+
+
 # THESE FUNCTIONS ARE FOR TESTING PURPOSES
 def f_remove():
     os.remove('cmd.yaml')
@@ -39,7 +41,7 @@ def f_empty():
         f.write("")
 
 
-# THESE FUNCTIONS ARE FOR CLI BUILD
+# THESE FUNCTIONS ARE FOR CLI's BACKEND
 @app.callback()
 def callback() -> None:
     """
@@ -78,6 +80,7 @@ def prettier(commands: dict) -> None:
             typer.echo(pretty_key + pretty_command)
 
 
+# THESE FUNCTIONS ARE FOR CLI's COMMANDS
 @app.command()
 def run(command: str) -> None:
     """
@@ -170,11 +173,9 @@ def inspect() -> None:
 
 
 @app.command()
-def init(
-    force: bool = typer.Option(False, "--force", "-f")
-) -> None:
-    """Creates a cmd.yaml (if file exists, deletes " 
-    "(if --force is used) or leaves it)"""
+def init(force: bool = typer.Option(False, "--force", "-f")) -> None:
+    """Creates a cmd.yaml (if file exists, deletes
+     (if --force is used) or leaves it)"""
     if os.path.exists('cmd.yaml'):
         if force:
             os.remove("cmd.yaml")
@@ -185,7 +186,7 @@ def init(
                             fg=typer.colors.CYAN, bold=True)
         else:
             typer.secho("'cmd.yaml' already exists.",
-                fg=typer.colors.GREEN, bold=True)
+                        fg=typer.colors.GREEN, bold=True)
     else:
         first_command = {"hi": "echo Hi from pcmd!"}
         with open('cmd.yaml', 'w') as f:
@@ -205,5 +206,5 @@ def fish() -> None:
                 fg=typer.colors.CYAN,
                 bold=True)
     typer.secho("Author:\thttps://jofin-f-archbald.herokuapp.com/",
-                fg=typer.colors.CYAN, 
+                fg=typer.colors.CYAN,
                 bold=True)
