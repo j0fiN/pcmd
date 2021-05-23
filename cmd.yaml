@@ -1,3 +1,14 @@
+cd-bye: cd pcmd
+cd-chain:
+- cd ..
+- cd pcmd
+- pcmd run main-chain
+cd-hi: cd ..
+cd-test:
+  - cd ..
+  - echo %cd%
+  - cd node-blog
+  - nodemon start
 check:
 - poetry run pytest --cov-config=.coveragerc --cov
 - echo ----------------------
@@ -32,5 +43,5 @@ main-chain:
 - echo hello
 main-hi: echo "Hi main"
 p: poetry run python pcmd/main.py
-r: poetry run python pcmd/main.py run main-hi
+r: poetry run python pcmd/main.py run cd-test
 test: poetry run pytest
