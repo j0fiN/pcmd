@@ -1,0 +1,12 @@
+[run]
+
+source = 
+    pcmd,
+    tests
+
+omit =
+    /tests/*
+    /Users/**/*
+    */site-packages/**/*
+
+parallel = True
