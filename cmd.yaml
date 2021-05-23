@@ -5,6 +5,7 @@ dir: dir
 # Commands of dev and pytest
 test: poetry run pytest
 doc: poetry run mkdocs serve
+p: poetry run python pcmd/main.py
 r: poetry run python pcmd/main.py run main-hi
 # i: poetry run python pcmd/main.py init
 is: poetry run python pcmd/main.py inspect
