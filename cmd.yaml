@@ -1,5 +1,5 @@
 check:
-- poetry run pytest --cov
+- poetry run pytest --cov-config=.coveragerc --cov
 - echo ----------------------
 - echo Flake test
 - poetry run flake8
@@ -7,9 +7,10 @@ check:
 - echo mypy test
 - poetry run mypy .
 - echo ----------------------
+- echo coverage report
 - poetry run coverage report -m
 check-global:
-- poetry run pytest --cov
+- poetry run pytest --cov-config=.coveragerc --cov
 - echo ----------------------
 - echo Flake test
 - flake8
@@ -17,6 +18,7 @@ check-global:
 - echo mypy test
 - mypy .
 - echo ----------------------
+- echo coverage report
 - coverage report -m
 dir: dir
 doc: poetry run mkdocs serve
