@@ -19,7 +19,12 @@ pcmd = "pcmd.main:app"
 python = "^3.6"
 typer = "^0.3.2"
 PyYAML = "^5.4.1"
-mkdocs-material = {version = "^7.1.5", extras = ["doc"]}
+mkdocs-material = {version = "^7.1.5", extras = ["dev"]}
+flake8 = {version = "^3.9.2", extras = ["dev"]}
+mypy = {version = "^0.812", extras = ["dev"]}
+coverage = {version = "^5.5", extras = ["dev"]}
+pytest = {version = "^5.2", extras = ["dev"]}
+pytest-cov = {version = "^2.12.0", extras = ["dev"]}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
