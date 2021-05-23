@@ -1,6 +1,6 @@
 # User Guide
 ## Intro
-We will go through the sys requirements, commands, the `cmd.yaml` file and autocompletion.
+We will go through the system requirements, commands, the `cmd.yaml` file and autocompletion.
 
 ## System requirements
  - [x] Works equally well on Windows, Linux and OSX.
@@ -22,6 +22,7 @@ and the `cmd.yaml`,
 ```yaml
 hi: echo Hi from pcmd!
 ```
+---
 ### `inspect`
 Inspects if `cmd.yaml` exists and if there are any *syntax* errors or *encoding* errors.
 ```sh-ssession
@@ -36,6 +37,7 @@ PCMD Inspection :
 
 ???+ Tip
     If your file is has encoding errors which cannot be resolved, you can start afresh using `init` command.
+---
 ### `run`
 This is key command of **pcmd**.  
 It runs your commands when given the specific custom name.
@@ -49,7 +51,7 @@ Hi from pcmd!
     Some examples are,  
     - activating enviroments using `/env/Scripts/activate`  
     - `cd` command
-
+---
 ### `list`
 Lists the complete `cmd.yaml`.  
 Useful to refer commands rather than opening the `cmd.yaml`.  
@@ -79,10 +81,11 @@ hi: echo Hi from pcmd!
                 - git push
 
         ```
-
+---
 ### `fish`  :material-egg-easter:
 :fish: - ACSII Art of pcmd
 
+---
 ## `cmd.yaml` file
 This is file which should contain all your commands paired up with your custom name.  
 !!! Note 
@@ -104,9 +107,29 @@ c-init:
     You can always check the syntax of the `cmd.yaml` using `inspect` command.  
     You can see the complete list of the file using `pcmd list -p` command.
 
-
+---
 ## Autocompletion from Typer
 **pcmd** is built using *Typer*, which provides some stunning in-built auto completion features.
 For more details, check out their <a href="https://typer.tiangolo.com/tutorial/options/autocompletion/" class="link" target="_blank">docs</a>
-???+ Warning
-    Auto completion feature may not work in some terminals.
+???+ Note
+    To Install autocompletion for the current shell.
+    ```bash
+    $ pcmd --install-completion
+    ```
+
+    To show completion for the current shell, to copy it or customize the installation.
+    ```bash
+    $ pcmd --show-completion
+    ```
+
+## Docs within shell.
+To check out **pcmd** docs within the current shell,
+```bash
+$ pcmd --help 
+```
+
+or just,
+
+```bash
+$ pcmd 
+```
