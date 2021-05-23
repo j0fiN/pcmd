@@ -178,7 +178,6 @@ def init(
     if os.path.exists('cmd.yaml'):
         if force:
             os.remove("cmd.yaml")
-
             first_command = {"hi": "echo Hi from pcmd!"}
             with open('cmd.yaml', 'w') as f:
                 yaml.dump(first_command, f)
@@ -199,10 +198,12 @@ def init(
 def fish() -> None:
     """PCMD"""
     typer.secho(egg, fg=typer.colors.CYAN, bold=True)
-    conf = typer.confirm("Do you want to check PCMD docs ?")
-    if conf:
-        typer.secho("Opening PCMD's docs",
-                    fg=typer.colors.CYAN, bold=True)
-        typer.launch("https://github.com/j0fiN/pcmd/")
-    else:
-        typer.secho("Okay!", fg=typer.colors.CYAN, bold=True)
+    typer.secho("Source:\thttps://github.com/j0fiN/pcmd",
+                fg=typer.colors.CYAN,
+                bold=True)
+    typer.secho("Pypi:\thttps://pypi.org/project/pcmd/",
+                fg=typer.colors.CYAN,
+                bold=True)
+    typer.secho("Author:\thttps://jofin-f-archbald.herokuapp.com/",
+                fg=typer.colors.CYAN, 
+                bold=True)
