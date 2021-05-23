@@ -101,9 +101,17 @@ def run(command: str) -> None:
             cmds = commands[command]
             if type(cmds).__name__ == 'list':
                 for cmd in cmds:
-                    subprocess.run(cmd.split(" "), shell=True)
+                    if cmd.split(" ")[0] == "cd":  # type: ignore
+                        os.chdir(cmd.split(" ")[1].replace('\\', '\\\\'))
+                    else:
+                        subprocess.run(cmd.split(" "), shell=True)
             else:
-                subprocess.run(cmds.split(" "), shell=True)  # type: ignore
+                if cmds.split(" ")[0] == "cd":  # type: ignore
+                    os.chdir(
+                        cmds.split(" ")[1].replace('\\',  # type: ignore
+                                                   '\\\\'))
+                else:
+                    subprocess.run(cmds.split(" "), shell=True)  # type: ignore
         except KeyError:
             typer.secho("CommandNotFound: Please make sure that you have"
                         " assigned a command to this name in 'cmd.yaml'",
