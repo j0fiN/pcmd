@@ -170,16 +170,29 @@ def inspect() -> None:
 
 
 @app.command()
-def init() -> None:
-    """Creates a cmd.yaml (if file exists, deletes and creates it)"""
+def init(
+    force: bool = typer.Option(False, "--force", "-f")
+) -> None:
+    """Creates a cmd.yaml (if file exists, deletes " 
+    "(if --force is used) or leaves it)"""
     if os.path.exists('cmd.yaml'):
-        os.remove("cmd.yaml")
+        if force:
+            os.remove("cmd.yaml")
 
-    first_command = {"hi": "echo Hi from pcmd!"}
-    with open('cmd.yaml', 'w') as f:
-        yaml.dump(first_command, f)
-    typer.secho("'cmd.yaml' created.",
-                fg=typer.colors.CYAN, bold=True)
+            first_command = {"hi": "echo Hi from pcmd!"}
+            with open('cmd.yaml', 'w') as f:
+                yaml.dump(first_command, f)
+                typer.secho("'cmd.yaml' created.",
+                            fg=typer.colors.CYAN, bold=True)
+        else:
+            typer.secho("'cmd.yaml' already exists.",
+                fg=typer.colors.GREEN, bold=True)
+    else:
+        first_command = {"hi": "echo Hi from pcmd!"}
+        with open('cmd.yaml', 'w') as f:
+            yaml.dump(first_command, f)
+            typer.secho("'cmd.yaml' created.",
+                        fg=typer.colors.CYAN, bold=True)
 
 
 @app.command()
