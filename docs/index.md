@@ -4,6 +4,17 @@
   <figcaption>A super simple terminal command shortner 🐟</figcaption>
 </figure>
 
+<a href="https://github.com/j0fiN/pcmd/blob/main/LICENSE"><img alt="PyPI - License" src="https://img.shields.io/pypi/l/pcmd?color=cyan&logo=libreoffice"></a>
+<a href="https://pypi.org/project/pcmd/"><img alt="PyPI" src="https://img.shields.io/pypi/v/pcmd?color=cyan&logo=pypi&logoColor=white"></a>
+<a href="https://github.com/j0fiN/pcmd/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/j0fiN/pcmd/Python%20package?color=cyan&logo=github"></a>
+<a href=""></a>
+
+---
+
+Source code : <a href="https://github.com/j0fiN/pcmd" class="link" target="_blank">https://github.com/j0fiN/pcmd</a>
+
+---
+
 ## About
 During development :fontawesome-solid-laptop-code:, it can be frustrating,  
 
