@@ -33,7 +33,12 @@ def f_add(commands):
 
 def f_syntax_err():
     with open('cmd.yaml', 'w') as f:
-        yaml.dump("as:-as\n-a", f)
+        f.write("error: [][")
+
+
+def f_reader_err():
+    with open('cmd.yaml', 'w', encoding='ascii') as f:
+        f.write(" ")
 
 
 def f_empty():
@@ -90,7 +95,7 @@ def run(command: str) -> None:
     if commands is None:
         typer.secho("FileNotFound: Please make sure that your "
                     "file name is 'cmd.yaml'",
-                    fg=typer.colors.RED, bold=True)
+                    fg=typer.colors.RED, bold=True, err=True)
     else:
         try:
             cmds = commands[command]
@@ -102,7 +107,7 @@ def run(command: str) -> None:
         except KeyError:
             typer.secho("CommandNotFound: Please make sure that you have"
                         " assigned a command to this name in 'cmd.yaml'",
-                        fg=typer.colors.RED, bold=True)
+                        fg=typer.colors.RED, bold=True, err=True)
 
 
 @app.command()
@@ -139,8 +144,8 @@ def inspect() -> None:
                     fg=typer.colors.GREEN,
                     bold=True)
         try:
-            with open('cmd.yaml') as f:
-                data = yaml.load(f, Loader=yaml.FullLoader)
+            with open('cmd.yaml', 'r') as f:
+                data = yaml.load(f, Loader=yaml.SafeLoader)
                 if data is not None:
                     typer.secho("\t'cmd.yaml' is valid!",
                                 fg=typer.colors.GREEN,
