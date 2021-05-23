@@ -79,10 +79,16 @@ def test_app_inspect():
 
 
 def test_app_list():
+    commands = get_commands()  # gets the commands
     result = runner.invoke(app, ["list", "-p"])
     assert result.exit_code == 0
     result = runner.invoke(app, ["list"])
     assert result.exit_code == 0
+    f_remove()
+    f_empty()
+    result = runner.invoke(app, ["list"])
+    assert result.exit_code == 0
+    f_add(commands)  # adds the file back
 
 
 def test_app_fish():
