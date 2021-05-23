@@ -1,5 +1,10 @@
 # Dummy Commands
 main-hi: echo "Hi main"
+main-chain:
+  - echo 1
+  - echo 2
+  - echo hello
+
 dir: dir
 
 # Commands of dev and pytest
@@ -7,26 +12,30 @@ test: poetry run pytest
 doc: poetry run mkdocs serve
 p: poetry run python pcmd/main.py
 r: poetry run python pcmd/main.py run main-hi
-# i: poetry run python pcmd/main.py init
+i: poetry run python pcmd/main.py init
 is: poetry run python pcmd/main.py inspect
 l: poetry run python pcmd/main.py list -p
 f: poetry run python pcmd/main.py fish
 
 # Checks before commits
 check-global:
-  - poetry run pytest
+  - poetry run pytest --cov
   - echo ----------------------
   - echo Flake test
   - flake8
   - echo ----------------------
   - echo mypy test
   - mypy .
+  - echo ----------------------
+  - coverage report -m
 
 check:
-  - poetry run pytest
+  - poetry run pytest --cov
   - echo ----------------------
   - echo Flake test
   - poetry run flake8
   - echo ----------------------
   - echo mypy test
   - poetry run mypy .
+  - echo ----------------------
+  - poetry run coverage report -m
