@@ -1,5 +1,9 @@
 from pcmd import __version__
-from pcmd.main import get_commands
+from typer.testing import CliRunner
+from pcmd.main import app
+from pcmd.main import get_commands, f_remove, f_add, f_syntax_err, f_empty
+
+runner = CliRunner()
 
 
 def test_version():
@@ -24,3 +28,57 @@ def test_get_commands_3():
 
 def test_get_commands_4():
     assert type(get_commands()['check']).__name__ == "list"
+
+
+def test_app_dynamic():
+    commands = get_commands()  # gets the commands
+    result = runner.invoke(app, ["run", "main-hi"])
+    assert result.exit_code == 0
+    result = runner.invoke(app, ["run", "main-chain"])
+    assert result.exit_code == 0
+    result = runner.invoke(app, ["run", "main-unknown"])
+    assert result.exit_code == 0
+    f_remove()  # removes the file for testing purposes
+    result = runner.invoke(app, ["run", "main-unknown"])
+    assert result.exit_code == 0
+    result = runner.invoke(app, ["list"])
+    assert result.exit_code == 0
+    result = runner.invoke(app, ["init"])
+    assert result.exit_code == 0
+    f_remove()
+    f_syntax_err()
+    result = runner.invoke(app, ["inspect"])
+    assert result.exit_code == 0
+    f_remove()
+    f_empty()
+    result = runner.invoke(app, ["inspect"])
+    assert result.exit_code == 0
+    result = runner.invoke(app, ["init", "-f"])
+    assert result.exit_code == 0
+    f_add(commands)  # adds the file back
+
+
+def test_app_init():
+    result = runner.invoke(app, ["init"])
+    assert result.exit_code == 0
+    assert "'cmd.yaml' already exists." in result.stdout
+
+
+def test_app_inspect():
+    result = runner.invoke(app, ["inspect"])
+    assert result.exit_code == 0
+    assert "PCMD Inspection : " in result.stdout
+    assert "\t'cmd.yaml' file found!" in result.stdout
+    assert "\t'cmd.yaml' is valid!" in result.stdout
+
+
+def test_app_list():
+    result = runner.invoke(app, ["list", "-p"])
+    assert result.exit_code == 0
+    result = runner.invoke(app, ["list"])
+    assert result.exit_code == 0
+
+
+def test_app_fish():
+    result = runner.invoke(app, ["fish"], input="n\n")
+    assert result.exit_code == 0
