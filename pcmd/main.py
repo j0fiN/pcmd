@@ -47,16 +47,6 @@ def f_empty():
 
 
 # THESE FUNCTIONS ARE FOR CLI's BACKEND
-@app.callback()
-def callback() -> None:
-    """
-    PCMD\n
-    A super simple terminal command shortener\n
-
-    For docs : https://github.com/j0fiN/pcmd
-    """
-
-
 def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
     try:
         with open('cmd.yaml') as f:
@@ -86,10 +76,21 @@ def prettier(commands: dict) -> None:
 
 
 # THESE FUNCTIONS ARE FOR CLI's COMMANDS
+@app.callback()
+def callback() -> None:
+    """
+    PCMD\n
+    A super simple terminal command shortener\n
+    Version : v2.0.0\n
+    Source : https://github.com/j0fiN/pcmd
+    """
+
+
 @app.command()
 def run(command: str) -> None:
     """
-    run terminal command / runs multiple command chains
+    Run terminal command / runs multiple command chains.\n
+    Check docs for warnings (pcmd fish for link).
     """
     commands = get_commands()
     if commands is None:
@@ -123,7 +124,7 @@ def list(
     pretty: bool = typer.Option(False, "--pretty", "-p")
 ) -> None:
     """
-    outputs the cmd.yaml
+    Outputs the complete cmd.yaml (use -p for pretty).
     """
     commands = get_commands()
     if commands is None:
@@ -150,7 +151,7 @@ def list(
 
 @app.command()
 def inspect() -> None:
-    """checks if cmd.yaml exists and validates it"""
+    """Checks if cmd.yaml exists and validates it."""
     typer.secho("PCMD Inspection : ", fg=typer.colors.BLUE,
                 bold=True)
     if os.path.exists('cmd.yaml'):
@@ -194,7 +195,7 @@ def inspect() -> None:
 @app.command()
 def init(force: bool = typer.Option(False, "--force", "-f")) -> None:
     """Creates a cmd.yaml (if file exists, deletes
-     (if --force is used) or leaves it)"""
+     (if --force (-f) is used) or leaves it)."""
     if os.path.exists('cmd.yaml'):
         if force:
             os.remove("cmd.yaml")
