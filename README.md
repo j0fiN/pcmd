@@ -17,6 +17,8 @@
 
 Source code : <a href="https://github.com/j0fiN/pcmd" class="link" target="_blank">https://github.com/j0fiN/pcmd</a>
 
+Documentation : <a href="https://j0fin.github.io/pcmd/" class="link" target="_blank">https://j0fin.github.io/pcmd</a>
+
 ---
 
 ## About
@@ -60,5 +62,7 @@ machine to use it as a *universal CLI* for all your projects.
 ## Move on !
 Excited to work using ***pcmd*** ?!
 Head over to the <a href="https://j0fin.github.io/pcmd/" class="link">User Guide.</a>
+
+---
 
 <p align=center>Do throw a :star: if you like the package!</p>
