@@ -1,27 +1,14 @@
 ##### :poop: Just a personal rough sheet filled with TODOs!
-
 > :hammer:
-
-
 > :wrench:
-
-
 > :memo:
-- [ ] check for grammar.
-
 > Final checks
-- [ ] pcmd
-- [ ] docs
-- [ ] Readme
-- [ ] __init__.py
-- [ ] wikis
-- [ ] CHANGELOGS
-- [ ] deploy docs first
-- [ ] Change the pypi.md
-- [ ] Change Readme.md
-- [ ] Update all shields
-- [ ] Update docstrings in files
 
+> :rocket: after publishing,
+- [ ] Update changelogs in docs and here.
+- [ ] resources page, with blogs and stuff.
+- [ ] Publish release in github.
+- [ ] Write a blog too.
 
 > :white_check_mark:
 - [x] --pretty or -p flag
@@ -43,23 +30,18 @@
 - [x] Shields, Pypi, gitmoji, CI, tests, docs, love of CODE.
 - [x] force flag in init
 - [x] Python -m pcmd
-
-> :rocket: after publishing,
-- [ ] Publish docs
-- [ ] Add proper links to shield in README.md.
-- [ ] resources page, with blogs and stuff.
-- [ ] Update changelogs in docs and here.
-- [ ] Publish release in github.
-- [ ] Write a blog too.
-
-# changes
-python 3.6 compatability
-init command
-inspect command
--p flag in list command
-seperate docs built
-cd command works
-subprocess
-
-CODECOV_TOKEN='0f1e357e-89ab-413b-91ad-b005eb052b21'
-0f1e357e-89ab-413b-91ad-b005eb052b21
+- [x] check for grammar.
+- [x] docs
+- [x] pcmd
+- [x] __init__.py
+- [x] wikis
+- [x] Readme
+- [x] CHANGELOGS
+- [x] deploy docs first
+- [x] Change the pypi.md
+- [x] Change Readme.md
+- [x] Update all shields
+- [x] Update docstrings in files
+- [x] Update the fish command.
+- [x] Publish docs
+- [x] Add proper links to shield in README.md.

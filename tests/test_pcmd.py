@@ -7,7 +7,7 @@ runner = CliRunner()
 
 
 def test_version():
-    assert __version__ == '1.2.3'
+    assert __version__ == '2.0.0'
 
 
 def test_get_commands_1():
