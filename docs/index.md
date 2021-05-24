@@ -9,7 +9,7 @@
  <a href="https://pypi.org/project/pcmd/" target="_blank"><img alt="PyPI" src="https://img.shields.io/pypi/v/pcmd?color=cyan&logo=pypi&logoColor=white"></a>
  <a href="https://github.com/j0fiN/pcmd/actions" target="_blank"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/j0fiN/pcmd/Python%20package?color=cyan&logo=github"></a>
  <a href="https://github.com/j0fiN/pcmd/actions" target="_blank"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/j0fiN/pcmd?color=cyan&logo=codecov&logoColor=white"></a>
-<a href=""></a>
+<a href="https://j0fin.github.io/pcmd/"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/j0fiN/pcmd/ci?color=cyan&label=docs&logo=read-the-docs&logoColor=white"></a>
 
 </p>
 
