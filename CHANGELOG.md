@@ -1,3 +1,130 @@
+## v2.0.0
+### :sparkles: Major changes, and :wrench: integrations
+> :art: complete theme change from purple to cyan.  
+> :wrench: python 3.6 compatability (prev versions were 3.8 and above).  
+> :boom: Introducing init and inspect commands.  
+> :tada: -p flag in list command.  
+> :memo: seperate docs pages built in github pages.  
+> :tada: cd command functionality.  
+> :hammer: `os.system` replaced with `subprocess.run`.  
+> :busts_in_silhouette: Added contribution guidelines.  
+> :white_check_mark: Added test coverage.  
+> :rotating_light: Added proper warnings.
+
+#### Commits
+- :bookmark: Released v2.0.0
+- :memo: Updated pypi doc
+- :memo: Added doc link and some styling
+- :pencil2: Name change from exceptor to pcmd
+- :memo: Updated doc link in fish command
+- :art: Updated shields
+- :truck: Fixed paths
+- :truck: Moved logo files
+- :green_heart: Fixing CI
+- :construction_worker: Added CI for publishing docs.
+- :memo: Updated version features
+- :memo: Refining docs and code refactoring
+- :lipstick: Added target blank for links
+- :wrench: Updated linkedin link
+- :pencil2: Refined docs to perfection.
+- :green_heart: Fixed .coveragerc
+- :white_check_mark: Ignored __main__.py coverage
+- :art: Updated linter checks
+- :art: Beautified fish command with tabs
+- :fish: Updated commands to py -m pcmd
+- :hammer: Cli updated to be called via py -m
+- :white_check_mark: Updated tests for list command
+- :fish: Added test command chains for cd
+- :bug: Fixed error handling for empty cmd.yaml files
+- :hammer: Added cd functionality
+- :wrench: cov-config flag added
+- :memo: Updated
+- :construction_worker: Added codecov
+- :white_check_mark: Increased code cov
+- :memo: Added badges.
+- :heavy_plus_sign: added dev deps as extras
+- :white_check_mark: Added code coverage
+- :fish: Changed to dynamic testing
+- :white_check_mark: Added tests for CLI commands
+- :art: Fixed linters
+- :hammer: Changed the fish command
+- :hammer: Added force flag for init command
+- :white_check_mark: Added function for tests
+- :fish: Updated for tests
+- :memo: Added styling user_guide page doc
+- :memo: Added releases page doc
+- :memo: Added developement page doc
+- :memo: Added design page doc
+- :fish: Added another custom command.
+- :art: linter changes
+- :fish: Add poetry pre-commit checks
+- :hammer: Added promt for docs.
+- :pencil2: Change output message.
+- :lipstick: Changed link class name
+- :memo: Added examples doc
+- :memo: Added user_guide doc
+- :memo: Added index doc
+- :wrench: changed to py 3.6
+- :wrench: Added list extension
+- :camera_flash: Added social media banner.
+- :fire: Removed examples folder. Moved to docs.
+- :white_check_mark: Changed test for list
+- :lipstick: Styling links in docs
+- :memo: Created pages for docs.
+- :wrench: Changed some doc page names.
+- :wrench: Added mkdocs config file
+- :lipstick: personal theme for docs
+- :memo: Added doc main page
+- :hammer: Added msg when cmd.yaml created
+- :memo: Added demo from root file.
+- :camera_flash: Changed logo and banner color
+- :truck: Moved assets into docs
+- :truck: Changed path of logo_banner
+- :heavy_plus_sign: Added mkdocs-material
+- :fish: Added names for each pcmd cmd and doc
+- :memo: Updated
+- :memo: TODO
+- :memo: Examples added.
+- :memo: Updated
+- :label: Updated annotations.
+- :hammer: Added init command
+- :bug: Typo in variable
+- :camera: Fixed picture encoding
+- :art: linter checks
+- :memo: TODO
+- :bug: Fixed UnicodeDecode error
+- :hammer: Added inspect command
+- :memo: Decorated the docstring
+- :camera_flash: Updated logo and banner to cyan theme
+- :lipstick: Changed package color to cyan
+- :fish: Testing -p option
+- :hammer: Added --pretty option
+- :memo: TODO
+- :page_facing_up: Updated name and year
+- :memo: TODO
+- :hammer: Added explicit start and end for list command
+- :clown_face: Added rough sheet for :poop: purposes
+- :art: Fixed linter errors
+- :bulb: Added comments for each set.
+- :wrench: Removed W605, W291, E501
+- :hammer: Changed to subprocess.run from os.system
+- :art: Fixed E203
+- :construction_worker: Updated mypy testing
+- :fish: Updated a commit flow command
+- :label: Updated annotations
+- :wrench: Added mypy
+- :wrench: Updated statistics flag.
+- :fish: Updated commands
+- :art: Updated flake8 structuring
+- :construction_worker: Added flake8 linter check
+- :package: Added flake8 as dev dep
+- :wrench: Added flake8 linter
+- :fish: Updated cmd.yaml
+- Updated Pytest.
+- :construction_worker: Added actions
+- :package: Added requirements.txt for CI
+
+
 ## v1.2.3
 ### :ambulance: check for `cmd.yaml` FileNotFound issue
  - :bookmark: v1.2.3 path bug fixed
