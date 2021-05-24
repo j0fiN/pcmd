@@ -11,8 +11,8 @@ extra_css:
   - stylesheets/extra.css
 theme:
   name: material
-  logo: '../logo.svg'
-  favicon: ../logo.svg
+  logo: '../pcmd/logo.svg'
+  favicon: ../pcmd/logo.svg
   palette:
     scheme: slate
     primary: cyan

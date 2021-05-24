@@ -1,6 +1,6 @@
 # Exceptor
 <figure>
-  <img src="../logo_banner.svg"/>
+  <img src="../pcmd/logo_banner.svg"/>
   <figcaption>A super simple terminal command shortener 🐟</figcaption>
 </figure>
 
