@@ -1,8 +1,18 @@
 # Releases
-From v1.2.3 onwards, git commits will NOT be recorded here.  
+From **v1.2.3** onwards, git commits will NOT be recorded here.  
 Check out <a href="https://github.com/j0fiN/pcmd/blob/main/CHANGELOG.md" class="link" target="_blank">CHANGELOG.md</a> for git commits record.
 ## v2.0.0
-:truck: On its way!
+### Features
+- [x] :art: complete theme change from purple to cyan.  
+- [x] :wrench: python 3.6 compatability (prev versions were 3.8 and above).  
+- [x] :boom: Introducing `init` and `inspect` commands.  
+- [x] :tada: -p flag in list command.  
+- [x] :memo: seperate docs pages built in github pages.  
+- [x] :tada: cd command functionality.  
+- [x] :hammer: `os.system` replaced with `subprocess.run`.  
+- [x] :busts_in_silhouette: Added contribution guidelines.  
+- [x] :white_check_mark: Added test coverage.  
+- [x] :rotating_light: Added proper warnings.
 ## v1.2.3
 
 ### :ambulance: check for `cmd.yaml` FileNotFound issue
