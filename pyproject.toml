@@ -23,7 +23,7 @@ PyYAML = "^5.4.1"
 
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "^6.2"
 flake8 = "^3.9.2"
 mkdocs-material = "^7.1.5"
 mypy = "^0.812"
