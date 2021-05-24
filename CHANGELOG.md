@@ -12,6 +12,9 @@
 > :rotating_light: Added proper warnings.
 
 #### Commits
+- :bookmark: Released v2.1.0
+- :ambulance: Added dev requirements file
+- :ambulance: removed unwanted extras
 - :bookmark: Released v2.0.0
 - :memo: Updated pypi doc
 - :memo: Added doc link and some styling
