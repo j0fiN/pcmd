@@ -32,8 +32,10 @@ extra:
       link: https://github.com/j0fiN/
     - icon: fontawesome/regular/user
       link: https://jofin-f-archbald.herokuapp.com/
-    - icon: fontawesome/solid/paper-plane
+    - icon: octicons/mail-16
       link: mailto:jofinfab@gmail.com
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jofin-f-archbald-6892b2186/
 copyright: Copyright &copy; 2021 Jofin F Archbald
 repo_url: https://github.com/j0fiN/pcmd
 repo_name: j0fiN/pcmd
