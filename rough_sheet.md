@@ -1,20 +1,27 @@
 ##### :poop: Just a personal rough sheet filled with TODOs!
 
 > :hammer:
-- [ ] cd command
-- [ ] Update tests
-- [ ] Add extra deps
-- [ ] Error handling when cmd.yaml is empty.
-- [ ] Python -m pcmd
-- [ ] force flag in init
+
+
 > :wrench:
 
 
 > :memo:
 - [ ] check for grammar.
-- [ ] Write a blog too.
-- [ ] Shields, Pypi, gitmoji, CI, tests, docs, love of CODE.
-- [ ] Add proper links to shield.
+
+> Final checks
+- [ ] pcmd
+- [ ] docs
+- [ ] Readme
+- [ ] __init__.py
+- [ ] wikis
+- [ ] CHANGELOGS
+- [ ] deploy docs first
+- [ ] Change the pypi.md
+- [ ] Change Readme.md
+- [ ] Update all shields
+- [ ] Update docstrings in files
+
 
 > :white_check_mark:
 - [x] --pretty or -p flag
@@ -29,12 +36,21 @@
 - [x] Contribution code and extras.
 - [x] talking about the dependencies also
 - [x] codecov
+- [x] Update tests
+- [x] Add extra deps
+- [x] cd command
+- [x] Error handling when cmd.yaml is empty.
+- [x] Shields, Pypi, gitmoji, CI, tests, docs, love of CODE.
+- [x] force flag in init
+- [x] Python -m pcmd
 
 > :rocket: after publishing,
 - [ ] Publish docs
+- [ ] Add proper links to shield in README.md.
 - [ ] resources page, with blogs and stuff.
-- [ ] Update changlogs in docs and here.
+- [ ] Update changelogs in docs and here.
 - [ ] Publish release in github.
+- [ ] Write a blog too.
 
 # changes
 python 3.6 compatability

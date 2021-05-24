@@ -1,6 +1,6 @@
 # User Guide
 ## Intro
-We will go through the system requirements, commands, the `cmd.yaml` file and autocompletion.
+We will go through the system requirements, commands, the `cmd.yaml` file, autocompletion, and other details.
 
 ## System requirements
  - [x] Works equally well on Windows, Linux and OSX.
@@ -9,16 +9,18 @@ We will go through the system requirements, commands, the `cmd.yaml` file and au
     Python 2 is **NOT** supported by pcmd
 ## Commands
 ### `init`
-The `int` command creates the `cmd.yaml` file in the current working directory.  
+The `init` command creates the `cmd.yaml` file in the current working directory.  
 ???+ Note
-    If the `cmd.yaml` already exists, it will **delete** the file and create it again.
-    This is useful when the `cmd.yaml` gets corrupted due to unfortunate circumstances.  
+    If the `cmd.yaml` already exists, it will leave the file as it is.
+    To delete the file and create it again, use the  
+    `--force (-f)` flag.  
+    This can be useful when the file gets corrupted due to unfortunate circumstances.  
 ```bash
 $ pcmd init
 
 'cmd.yaml' created.
 ```
-and the `cmd.yaml`,
+and the `cmd.yaml` will have,
 ```yaml
 hi: echo Hi from pcmd!
 ```
@@ -36,25 +38,33 @@ PCMD Inspection :
 ```
 
 ???+ Tip
-    If your file is has encoding errors which cannot be resolved, you can start afresh using `init` command.
+    If your file has encoding errors which cannot be resolved, you can start afresh using `init -f` command.
 ---
 ### `run`
-This is key command of **pcmd**.  
+This is the key command of **pcmd**.  
 It runs your commands when given the specific custom name.
 ``` bash
 $ pcmd run hi
 
-Hi from pcmd!
+Hi from pcmd! # this works since cmd.yaml had a custom name 'hi'
 ```
 ???+ Warning
-    Commands which involve **changes** or **reload** of terminal will NOT WORK.  
+    Commands which involve **changes** or **reload** of terminal will NOT work.  
     Some examples are,  
     - activating enviroments using `/env/Scripts/activate`  
-    - `cd` command
+    - Starting `python`, `node`, `mongo` or any other shell. The shell will open, but the commands after it will not work.  
+
+    For more understanding, see some of the <a href="/examples" class="link">examples</a> provided.
+
+???+ Tip "Technical details"
+    Any commands which involve in the initiation of the child process will work in **pcmd**. The caveat is that the commands which are supposed to work in the child process will only work in the parent process, resulting in no command execution in the child process.
+
+    For this reason, **pcmd** has a seperate functionality for the most-used `cd` command, which works perfectly fine.
+
 ---
 ### `list`
 Lists the complete `cmd.yaml`.  
-Useful to refer commands rather than opening the `cmd.yaml`.  
+Useful to refer to commands rather than opening the `cmd.yaml`.  
 ```sh-session
 $ pcmd list
         =======PCMD=======
@@ -67,7 +77,7 @@ hi: echo Hi from pcmd!
 
 ```
 
- - `--pretty (-p)` : pretty prints the complete list (Useful for easier reading of large `cmd.yaml` files)
+ - `--pretty (-p)` : pretty prints the complete list (Useful for easier reading of large `cmd.yaml` files).
 
     ???+ Example
         ```sh-session
@@ -83,11 +93,12 @@ hi: echo Hi from pcmd!
         ```
 ---
 ### `fish`  :material-egg-easter:
-:fish: - ACSII Art of pcmd
+:fish: - ACSII Art of pcmd  
+along with other useful links.
 
 ---
 ## `cmd.yaml` file
-This is file which should contain all your commands paired up with your custom name.  
+This is the file that should contain all your commands paired up with your custom name.  
 !!! Note 
     If file is created manually, it must be named `cmd.yaml` and NOT `cmd.yml`
 
@@ -103,13 +114,15 @@ c-init:
   - git commit -m 'init commit'
   - git push
 ```
-???+ Tip
-    You can always check the syntax of the `cmd.yaml` using `inspect` command.  
-    You can see the complete list of the file using `pcmd list -p` command.
+
+???+ Tip "Useful tips in cmd.yaml"
+    - You can always check the syntax of the `cmd.yaml` using `inspect` command.  
+    - You can see the complete list of the file using `pcmd list -p` command.  
+    - Avoid using same custom names for two different commands.
 
 ---
 ## Autocompletion from Typer
-**pcmd** is built using *Typer*, which provides some stunning in-built auto completion features.
+**pcmd** is built using *Typer*, which provides some stunning in-built autocompletion features.
 For more details, check out their <a href="https://typer.tiangolo.com/tutorial/options/autocompletion/" class="link" target="_blank">docs</a>
 ???+ Note
     To Install autocompletion for the current shell.
@@ -122,13 +135,33 @@ For more details, check out their <a href="https://typer.tiangolo.com/tutorial/o
     $ pcmd --show-completion
     ```
 
-## Docs within shell.
-To check out **pcmd** docs within the current shell,
+## Using `python -m`
+pcmd can also be executed as a script. i.e.,
+you can use `python -m` to execute the CLI.  
+=== "python"
+
+    ``` bash
+    $ python -m pcmd init -f
+
+    'cmd.yaml' created.
+    ```
+
+=== "python via poetry"
+
+    ``` bash
+    $ poetry run python -m pcmd init -f
+
+    'cmd.yaml' created.
+    ```
+
+## Docs within CLI.
+To check out **pcmd** docs within the CLI,
 ```bash
-$ pcmd --help 
+$ pcmd [COMMAND] --help
+# Example: pcmd run --help
 ```
 
-or just,
+For full docs,
 
 ```bash
 $ pcmd 

@@ -3,26 +3,29 @@
 Before diving into the code, here are some guidelines for contribution.
 
 ## Installation
-For any contribution (doc or code), the latest version of **pcmd** must be installed globally first,
+For any contribution (doc or code), **pcmd** must be installed globally.  
+This installation will be for working with `cmd.yaml` which has some useful commands for developement.
+
 ```bash
 $ pip install pcmd
 ```
-
+Now,  
 **pcmd** uses,
 
- - [x] poetry           - Build, package and publish the project.
- - [x] pytest           - Build tests.
- - [x] flake8           - Code style guide.
- - [x] mypy             - Type checking.
- - [x] coverage         - Test coverage.
- - [x] mkdocs-material  - Documentation.
+ - [x] poetry           - *Build, package and publish the project*
+ - [x] pytest           - *Build tests*
+ - [x] flake8           - *Code style guide*
+ - [x] mypy             - *Type checking*
+ - [x] coverage         - *Test coverage*
+ - [x] pytest-cov       - *For coverage in pytest*
+ - [x] mkdocs-material  - *Documentation*
 
-All these can be downloaded as extras in **pcmd** in your *virtual environment*.
+All these can be downloaded as extras in **pcmd** in your *virtual environment* (except for poetry, which is the developer's choice).
 
 === "pip"
     ```bash
     $ pip install poetry
-    ---> 100%
+    ---> 100% # optional
 
     $ pip install pcmd[dev]
     ---> 100%
@@ -39,8 +42,6 @@ All these can be downloaded as extras in **pcmd** in your *virtual environment*.
     ```
 
 ## Developement
-Add `app()` at the end of the `\pcmd\main.py` file to test your changes in terminal.  
-
 The `cmd.yaml` in the root directory has single-letter commands for each command in **pcmd**
 ```bash
 $ pcmd run r # run command
@@ -61,7 +62,7 @@ This will run
 - pytest tests
 - flake8 checks
 - mypy inspection (if specified)
-- code coverage.
+- code coverage (with the number of lines not covered).
 
 Making things much easier!
 
@@ -71,3 +72,12 @@ in the local server.
 ```bash
 pcmd run doc
 ```
+
+## Conclusion
+Do follow the [gitmoji](https://gitmoji.dev/) style of commit messages.  
+
+Do fork the repo and come up with crazy PRs!
+
+---
+
+<p align="center">Do 🌟 the repo if you like it!</p>

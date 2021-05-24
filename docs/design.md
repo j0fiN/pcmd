@@ -1,5 +1,5 @@
 # Design and Inspiration
-What inspired **pcmd** ? What is it's backbone ? And how they helped to make the package better ? 
+What inspired pcmd? What is its backbone? And how they helped to make the package better? 
 
 ## Backbone
 ### <a href="https://typer.tiangolo.com/" class="link" target="_blank">Typer</a>
@@ -21,7 +21,7 @@ CLI built using **Typer** can also be easily scaled up in complexity.
 !!! Tip "Fun Fact!"
     The *complete documentation* and *the <a href="https://gitmoji.dev/" class="link" target="_blank">gitmoji</a> commits* of **pcmd** was also inspired by the 
     <a target="_blank" class="link" href="https://tiangolo.com/">author's</a> 
-    works in <a href="https://fastapi.tiangolo.com/" class="link" target="_blank">FastApi</a> 
+    great works in <a href="https://fastapi.tiangolo.com/" class="link" target="_blank">FastApi</a> 
     and <a href="https://typer.tiangolo.com/" class="link" target="_blank">Typer</a>
 
 ### <a href="https://pyyaml.org/wiki/PyYAMLDocumentation" class="link" target="_blank">PyYAML</a>
@@ -34,11 +34,6 @@ It is the most commonly used yaml parser in the language.
 
 ## Inspiration and Idea - From the author of pcmd.
 
-"I needed a tool that could take away all my hassles
-in typing atrocious terminal commands to a
-*'write-once-run-anytime-with-just-a-few-words'* system.
-I thought that this issue might not be only for me, but
-for other developers too. I realized that if a tool could
-do that, it would increase our workflow to another extent."  
+"I needed a tool that could take away all my hassles in typing atrocious terminal commands to a 'write-once-run-anytime-with-just-a-few-words' system. I thought that this issue might not be only for me but for other developers too. I realized that if a tool could do that, it would increase our workflow to another extent."  
     
-~ Jofin F Archbald
+<p align="right">~ <a href="https://jofin-f-archbald.herokuapp.com/" class="link">Jofin F Archbald</a></p>
