@@ -222,6 +222,9 @@ def fish() -> None:
     typer.secho("Source\t:\thttps://github.com/j0fiN/pcmd",
                 fg=typer.colors.CYAN,
                 bold=True)
+    typer.secho("Docs\t:\thttps://j0fin.github.io/pcmd/",
+                fg=typer.colors.CYAN,
+                bold=True)
     typer.secho("Pypi\t:\thttps://pypi.org/project/pcmd/",
                 fg=typer.colors.CYAN,
                 bold=True)
