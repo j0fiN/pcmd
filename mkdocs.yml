@@ -11,8 +11,8 @@ extra_css:
   - stylesheets/extra.css
 theme:
   name: material
-  logo: '../assets/logo.svg'
-  favicon: ../assets/logo.svg
+  logo: '../logo.svg'
+  favicon: ../logo.svg
   palette:
     scheme: slate
     primary: cyan
