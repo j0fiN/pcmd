@@ -20,24 +20,18 @@ Now,
  - [x] pytest-cov       - *For coverage in pytest*
  - [x] mkdocs-material  - *Documentation*
 
-All these can be downloaded as extras in **pcmd** in your *virtual environment* (except for poetry, which is the developer's choice).
+All these can be downloaded by,
 
 === "pip"
     ```bash
-    $ pip install poetry
-    ---> 100% # optional
-
-    $ pip install pcmd[dev]
+    $ pip install -r dev-requirements.txt
     ---> 100%
     ```
 
 === "poetry"
 
     ``` bash
-    $ poetry add pcmd[dev]
-
-
-
+    $ poetry install
     ---> 100%     
     ```
 

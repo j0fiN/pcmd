@@ -1,6 +1,10 @@
 # Releases
 From **v1.2.3** onwards, git commits will NOT be recorded here.  
 Check out <a href="https://github.com/j0fiN/pcmd/blob/main/CHANGELOG.md" class="link" target="_blank">CHANGELOG.md</a> for git commits record.
+## v2.1.0
+### Feature
+- [x] :bug: :ambulance: Fixed extras installation.
+
 ## v2.0.0
 ### Features
 - [x] :art: complete theme change from purple to cyan.  
