@@ -74,7 +74,7 @@ pcmd run doc
 ```
 
 ## Conclusion
-Do follow the [gitmoji](https://gitmoji.dev/) style of commit messages.  
+Do follow the <a href="https://gitmoji.dev/" class="link" target="_blank">gitmoji</a> style of commit messages.  
 
 Do fork the repo and come up with crazy PRs!
 
