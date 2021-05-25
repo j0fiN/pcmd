@@ -40,7 +40,7 @@ A single config file :wrench: ...
 ... and your ready to go :rocket: !
 
 
-![animation](https://github.com/j0fiN/pcmd/blob/main/docs/animation.svg)
+![animation](https://github.com/j0fiN/pcmd/blob/main/docs/Animation.gif)
 
 ## Installation
 
