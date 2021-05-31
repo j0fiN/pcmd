@@ -1,9 +1,47 @@
 Todo:
-☐ Update changelogs in docs and here.
-☐ resources page, with blogs and stuff.
-☐ Publish release in github.
-☐ Write a blog too.
+    ☐ Update changelogs in docs and here.
+    ☐ Write a blog too.
+    ☐ Add `add` command in docs
+    ☐ Sheduled release
+    ☐ Thinking other features too.
+    ☐ Publish release in github.
+    ☐ Adding autocomplete feature for the command @feature
+    ☐ `add` command @high
 
-Updates:
-✔ `add` command @high @done(21-05-31 17:38)
-✔ Why better than bash @done(21-05-31 17:38)
+Archive:
+    ✘ resources page, with blogs and stuff. @cancelled(21-05-31 17:47)
+    ✔ Why better than bash @done(21-05-31 17:38)
+    ✔ --pretty or -p flag @done(21-05-31 21:21)
+    ✔ inspect command @done(21-05-31 21:21)
+    ✔ Color to CYAN! @done(21-05-31 21:21)
+    ✔ clean command to clean the corrupted yaml file - changed to inspect @done(21-05-31 21:21)
+    ✔ init command to create a cmd.yaml file @done(21-05-31 21:21)
+    ✔ examples of cmd.yaml @done(21-05-31 21:21)
+    ✔ dependabot @done(21-05-31 21:21)
+    ✔ discord @done(21-05-31 21:21)
+    ✔ A complete documentation in mkdocs @done(21-05-31 21:21)
+    ✔ Contribution code and extras. @done(21-05-31 21:21)
+    ✔ talking about the dependencies also @done(21-05-31 21:21)
+    ✔ codecov @done(21-05-31 21:21)
+    ✔ Update tests @done(21-05-31 21:21)
+    ✘ Add extra deps @cancelled(21-05-31 21:25)
+    ✔ cd command @done(21-05-31 21:21)
+    ✔ Error handling when cmd.yaml is empty. @done(21-05-31 21:21)
+    ✔ Shields, Pypi, gitmoji, CI, tests, docs, love of CODE. @done(21-05-31 21:21)
+    ✔ force flag in init @done(21-05-31 21:21)
+    ✔ Python -m pcmd @done(21-05-31 21:21)
+    ✔ check for grammar. @done(21-05-31 21:21)
+    ✔ docs @done(21-05-31 21:21)
+    ✔ pcmd @done(21-05-31 21:21)
+    ✔ init.py @done(21-05-31 21:21)
+    ✘ wikis @cancelled(21-05-31 21:24)
+    ✔ Readme @done(21-05-31 21:21)
+    ✔ CHANGELOGS @done(21-05-31 21:21)
+    ✔ deploy docs first @done(21-05-31 21:21)
+    ✔ Change the pypi.md @done(21-05-31 21:21)
+    ✔ Change Readme.md @done(21-05-31 21:21)
+    ✔ Update all shields @done(21-05-31 21:21)
+    ✔ Update docstrings in files @done(21-05-31 21:21)
+    ✔ Update the fish command. @done(21-05-31 21:21)
+    ✔ Publish docs @done(21-05-31 21:21)
+    ✔ Add proper links to shield in README.md. @done(21-05-31 21:21)
