@@ -245,7 +245,6 @@ def add(
     """
     if os.path.exists('cmd.yaml'):
         tcommands = get_commands()
-        print([*tcommands])
         if key in [*tcommands]:
             conf = typer.confirm('Custom name already exists.'
                                 'Do you want to overwrite?', 
@@ -259,7 +258,7 @@ def add(
                     bold=True)
         else:
             with open('cmd.yaml', 'a') as f:
-                data = yaml.load(f"\n{key}: {val}", Loader=yaml.FullLoader)
+                data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
                 yaml.dump(data, f)
             typer.secho("Command added in cmd.yaml",
                     fg=typer.colors.CYAN,
@@ -267,7 +266,7 @@ def add(
     
     else:
         with open('cmd.yaml', 'a') as f:
-            data = yaml.load(f"\n{key}: {val}", Loader=yaml.FullLoader)
+            data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
             yaml.dump(data, f)
         
         typer.secho("Command added in cmd.yaml",
