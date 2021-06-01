@@ -3,19 +3,14 @@ main-chain:
 - echo 2
 - echo hello
 main-hi: echo "Hi main"
-
 cd-chain:
 - cd ..
 - cd pcmd
 - pcmd run main-chain
-cd-hi: cd ..
+cd-hi: cd D\programz\pcmd\
 cd-bye: cd pcmd
 cd-test:
-- cd ..
-- echo %cd%
-- cd node-blog
-- nodemon start
-
+- cd D\programz\pcmd\
 check:
 - poetry run pytest --cov-config=.coveragerc --cov
 - echo ----------------------
@@ -38,11 +33,9 @@ check-global:
 - echo ----------------------
 - echo coverage report
 - coverage report -m
-
 dir: dir
 doc: poetry run mkdocs serve
 test: poetry run pytest
-
 a: poetry run py -m add
 f: poetry run python -m pcmd fish
 i: poetry run python -m pcmd init
