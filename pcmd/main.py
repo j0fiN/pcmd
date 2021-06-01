@@ -3,7 +3,6 @@ import typer
 import os  # type: ignore
 import subprocess
 from typing import Dict, List, Optional, Union
-from collections import OrderedDict
 app = typer.Typer()
 
 egg = """
@@ -29,7 +28,7 @@ def f_remove():
 
 def f_add(commands):
     with open('cmd.yaml', 'w') as f:
-        yaml.dump(commands, f)
+        yaml.dump(commands, f, sort_keys=False)
 
 
 def f_syntax_err():
@@ -233,6 +232,7 @@ def fish() -> None:
                 fg=typer.colors.CYAN,
                 bold=True)
 
+
 @app.command()
 def add(
     key:str = typer.Option(..., '--key', '-k', 
@@ -243,16 +243,33 @@ def add(
     """
     Adds commands into the cmd.yaml using --key(-k) and --value(-v)
     """
-    commands = get_commands()
-    if key in list(commands.keys()):
-        conf = typer.confirm('Custom name already exists.'
-                             'Do you want to overwrite?', 
-                             abort=True)
-        commands[key] = val
-
-    with open('cmd.yaml', 'a') as f:
-        yaml.dump({key: val}, f)
+    if os.path.exists('cmd.yaml'):
+        tcommands = get_commands()
+        print([*tcommands])
+        if key in [*tcommands]:
+            conf = typer.confirm('Custom name already exists.'
+                                'Do you want to overwrite?', 
+                                abort=True)
+            tcommands[key] = val
+            with open('cmd.yaml', 'w') as f:
+                yaml.dump(tcommands, f, sort_keys=False)
+            
+            typer.secho(f"Command changed for name '{key}' in cmd.yaml",
+                    fg=typer.colors.CYAN,
+                    bold=True)
+        else:
+            with open('cmd.yaml', 'a') as f:
+                data = yaml.load(f"\n{key}: {val}", Loader=yaml.FullLoader)
+                yaml.dump(data, f)
+            typer.secho("Command added in cmd.yaml",
+                    fg=typer.colors.CYAN,
+                    bold=True)
     
-    typer.secho("Command added in cmd.yaml",
-                fg=typer.colors.CYAN,
-                bold=True)
+    else:
+        with open('cmd.yaml', 'a') as f:
+            data = yaml.load(f"\n{key}: {val}", Loader=yaml.FullLoader)
+            yaml.dump(data, f)
+        
+        typer.secho("Command added in cmd.yaml",
+                    fg=typer.colors.CYAN,
+                    bold=True)
