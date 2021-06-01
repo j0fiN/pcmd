@@ -28,7 +28,7 @@ def f_remove():
 
 def f_add(commands):
     with open('cmd.yaml', 'w') as f:
-        yaml.dump(commands, f, sort_keys=False)
+        yaml.dump(commands, f, sort_keys=False, indent=2)
 
 
 def f_syntax_err():
@@ -144,7 +144,7 @@ def list(
             if pretty:
                 prettier(commands)
             else:
-                typer.echo(yaml.dump(commands, indent=4,
+                typer.echo(yaml.dump(commands, indent=2,
                                      explicit_start=True,
                                      explicit_end=True))
 
@@ -251,7 +251,7 @@ def add(
                                 abort=True)
             tcommands[key] = val
             with open('cmd.yaml', 'w') as f:
-                yaml.dump(tcommands, f, sort_keys=False)
+                yaml.dump(tcommands, f, sort_keys=False, indent=2)
             
             typer.secho(f"Command changed for name '{key}' in cmd.yaml",
                     fg=typer.colors.CYAN,
