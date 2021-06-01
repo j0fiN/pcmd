@@ -1,14 +1,21 @@
-cd-bye: cd pcmd
+main-chain:
+- echo 1
+- echo 2
+- echo hello
+main-hi: echo "Hi main"
+
 cd-chain:
 - cd ..
 - cd pcmd
 - pcmd run main-chain
 cd-hi: cd ..
+cd-bye: cd pcmd
 cd-test:
 - cd ..
 - echo %cd%
 - cd node-blog
 - nodemon start
+
 check:
 - poetry run pytest --cov-config=.coveragerc --cov
 - echo ----------------------
@@ -31,18 +38,15 @@ check-global:
 - echo ----------------------
 - echo coverage report
 - coverage report -m
+
 dir: dir
 doc: poetry run mkdocs serve
+test: poetry run pytest
+
+a: poetry run py -m add
 f: poetry run python -m pcmd fish
 i: poetry run python -m pcmd init
 is: poetry run python -m pcmd inspect
 l: poetry run python -m pcmd list -p
-main-chain:
-- echo 1
-- echo 2
-- echo hello
-main-hi: echo "Hi main"
 p: poetry run python -m pcmd
 r: poetry run python -m pcmd run cd-test
-test: poetry run pytest
-a: poetry run py -m add
