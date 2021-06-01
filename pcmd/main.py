@@ -112,30 +112,15 @@ def inspect() -> None:
                 if data is not None:
                     echo_file_valid()
                 else:
-                    typer.secho("\t'cmd.yaml' is empty. Please "
-                                "enter any command into the file.",
-                                fg=typer.colors.YELLOW,
-                                bold=True)
-
-        except yaml.YAMLError as e:
-            typer.secho(f"\tERROR in file : \n{e}",
-                        fg=typer.colors.RED,
-                        bold=True)
+                    echo_file_empty()
         except (yaml.reader.ReaderError, yaml.scanner.ScannerError) as e:
-            typer.secho(f"\tERROR in file : /n/t{e}",
-                        fg=typer.colors.RED,
-                        bold=True)
-            typer.secho("INFO : Delete the file and type "
-                        "'pcmd init' to create cmd.yaml file",
-                        fg=typer.colors.CYAN,
-                        bold=True)
+            echo_file_error(e)
+            echo_info_del_init()
+        except yaml.YAMLError as e:
+            echo_file_error(e)
     else:
-        typer.secho("'cmd.yaml' file NOT found",
-                    fg=typer.colors.RED,
-                    bold=True)
-        typer.secho("INFO : Type 'pcmd init' to create cmd.yaml file",
-                    fg=typer.colors.CYAN,
-                    bold=True)
+        echo_file_not_found()
+        echo_info_init()
 
 
 @app.command()
