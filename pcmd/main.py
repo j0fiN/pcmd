@@ -50,7 +50,7 @@ def f_empty():
 def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
     try:
         with open('cmd.yaml') as f:
-            data = yaml.load(f, Loader=yaml.FullLoader) or {}
+            data = yaml.load(f, Loader=yaml.BaseLoader) or {}
             return data
     except FileNotFoundError:
         return None
@@ -160,7 +160,7 @@ def inspect() -> None:
                     bold=True)
         try:
             with open('cmd.yaml', 'r') as f:
-                data = yaml.load(f, Loader=yaml.SafeLoader)
+                data = yaml.load(f, Loader=yaml.BaseLoader)
                 if data is not None:
                     typer.secho("\t'cmd.yaml' is valid!",
                                 fg=typer.colors.GREEN,
