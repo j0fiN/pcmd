@@ -1,7 +1,8 @@
 from pcmd import __version__
 from typer.testing import CliRunner
-from pcmd.main import app, f_reader_err
-from pcmd.main import get_commands, f_remove, f_add, f_syntax_err, f_empty
+from pcmd.main import app
+from pcmd.__core__ import get_commands
+from pcmd.__helper__ import f_scan_err, f_remove, f_add, f_syntax_err, f_empty
 
 runner = CliRunner()
 
@@ -52,7 +53,7 @@ def test_app_dynamic():
     result = runner.invoke(app, ["inspect"])
     assert result.exit_code == 0
     f_remove()
-    f_reader_err()
+    f_scan_err()
     result = runner.invoke(app, ["inspect"])
     assert result.exit_code == 0
     f_remove()
