@@ -92,5 +92,29 @@ def test_app_list():
 
 
 def test_app_fish():
-    result = runner.invoke(app, ["fish"], input="n\n")
+    result = runner.invoke(app, ["fish"])
     assert result.exit_code == 0
+
+
+def test_app_add():
+    commands = get_commands()
+    f_remove()
+    result = runner.invoke(app, ["add"], input="add\nadd\n")
+    assert result.exit_code == 0
+    f_remove()
+    f_add(commands)
+    result = runner.invoke(app, ["add"], input="a\nadd\ny\n")
+    assert result.exit_code == 0
+    f_remove()
+    f_add(commands)
+    result = runner.invoke(app, ["add"], input="adder\nadd\n")
+    assert result.exit_code == 0
+    f_remove()
+    f_add(commands)
+
+
+def test_cd():
+    result = runner.invoke(app, ["run", "cd-hi"])
+    assert result.exit_code == 1
+    result = runner.invoke(app, ["run", "cd-test"])
+    assert result.exit_code == 1
