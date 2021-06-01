@@ -2,7 +2,23 @@ import yaml
 import typer
 import os  # type: ignore
 import subprocess
-from typing import Dict, List, Optional, Union
+from .__core__ import get_commands, prettier, save_cmd_yaml
+from .__echoes__ import (
+    echo_file_created,
+    echo_file_empty,
+    echo_file_error,
+    echo_file_exist,
+    echo_file_found,
+    echo_file_not_found,
+    echo_file_valid,
+    echo_cmd_added,
+    echo_cmd_changed,
+    echo_cmd_not_found,
+    echo_info_del_init,
+    echo_info_init,
+    echo_list_header,
+    echo_inspect_header,
+)
 app = typer.Typer()
 
 egg = """
@@ -19,60 +35,6 @@ egg = """
 |_|
 
 """
-
-
-# THESE FUNCTIONS ARE FOR TESTING PURPOSES
-def f_remove():
-    os.remove('cmd.yaml')
-
-
-def f_add(commands):
-    with open('cmd.yaml', 'w') as f:
-        yaml.dump(commands, f, sort_keys=False, indent=2)
-
-
-def f_syntax_err():
-    with open('cmd.yaml', 'w') as f:
-        f.write("error: [][")
-
-
-def f_reader_err():
-    with open('cmd.yaml', 'w', encoding='ascii') as f:
-        f.write(" ")
-
-
-def f_empty():
-    with open('cmd.yaml', 'w') as f:
-        f.write("")
-
-
-# THESE FUNCTIONS ARE FOR CLI's BACKEND
-def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
-    try:
-        with open('cmd.yaml') as f:
-            data = yaml.load(f, Loader=yaml.BaseLoader) or {}
-            return data
-    except FileNotFoundError:
-        return None
-
-
-def prettier(commands: dict) -> None:
-    for key in commands:
-        if type(commands[key]).__name__ == 'list':
-
-            typer.secho(f"{key}\t: ",
-                        fg=typer.colors.BLUE, bold=True)
-            for command in commands[key]:
-                typer.secho(f"\t- {command}",
-                            fg=typer.colors.CYAN, bold=True)
-        else:
-            pretty_key = typer.style(f"{key}\t: ",
-                                     fg=typer.colors.BLUE,
-                                     bold=True)
-            pretty_command = typer.style(commands[key],
-                                         fg=typer.colors.CYAN,
-                                         bold=True)
-            typer.echo(pretty_key + pretty_command)
 
 
 # THESE FUNCTIONS ARE FOR CLI's COMMANDS
@@ -94,9 +56,7 @@ def run(command: str) -> None:
     """
     commands = get_commands()
     if commands is None:
-        typer.secho("FileNotFound: Please make sure that your "
-                    "file name is 'cmd.yaml'",
-                    fg=typer.colors.RED, bold=True, err=True)
+        echo_file_not_found()
     else:
         try:
             cmds = commands[command]
@@ -114,9 +74,7 @@ def run(command: str) -> None:
                 else:
                     subprocess.run(cmds.split(" "), shell=True)  # type: ignore
         except KeyError:
-            typer.secho("CommandNotFound: Please make sure that you have"
-                        " assigned a command to this name in 'cmd.yaml'",
-                        fg=typer.colors.RED, bold=True, err=True)
+            echo_cmd_not_found()
 
 
 @app.command()
@@ -128,18 +86,11 @@ def list(
     """
     commands = get_commands()
     if commands is None:
-        typer.secho("FileNotFound: Please make sure that "
-                    "your file name is 'cmd.yaml'",
-                    fg=typer.colors.RED, bold=True)
+        echo_file_not_found()
     else:
-        typer.secho(f"\t=======PCMD=======\nPath\t: {os. getcwd()}\\"
-                    "cmd.yaml\n".replace('\\\\', '\\'),
-                    fg=typer.colors.BLUE, bold=True)
+        echo_list_header()
         if commands == {}:
-            typer.secho("\t'cmd.yaml' is empty. Please "
-                        "enter any command into the file.",
-                        fg=typer.colors.YELLOW,
-                        bold=True)
+            echo_file_empty()
         else:
             if pretty:
                 prettier(commands)
@@ -152,19 +103,14 @@ def list(
 @app.command()
 def inspect() -> None:
     """Checks if cmd.yaml exists and validates it."""
-    typer.secho("PCMD Inspection : ", fg=typer.colors.BLUE,
-                bold=True)
+    echo_inspect_header()
     if os.path.exists('cmd.yaml'):
-        typer.secho("\t'cmd.yaml' file found!\n",
-                    fg=typer.colors.GREEN,
-                    bold=True)
+        echo_file_found()
         try:
             with open('cmd.yaml', 'r') as f:
                 data = yaml.load(f, Loader=yaml.BaseLoader)
                 if data is not None:
-                    typer.secho("\t'cmd.yaml' is valid!",
-                                fg=typer.colors.GREEN,
-                                bold=True)
+                    echo_file_valid()
                 else:
                     typer.secho("\t'cmd.yaml' is empty. Please "
                                 "enter any command into the file.",
@@ -200,19 +146,14 @@ def init(force: bool = typer.Option(False, "--force", "-f")) -> None:
         if force:
             os.remove("cmd.yaml")
             first_command = {"hi": "echo Hi from pcmd!"}
-            with open('cmd.yaml', 'w') as f:
-                yaml.dump(first_command, f)
-                typer.secho("'cmd.yaml' created.",
-                            fg=typer.colors.CYAN, bold=True)
+            save_cmd_yaml(first_command, 'w', False)
+            echo_file_created()
         else:
-            typer.secho("'cmd.yaml' already exists.",
-                        fg=typer.colors.GREEN, bold=True)
+            echo_file_exist()
     else:
         first_command = {"hi": "echo Hi from pcmd!"}
-        with open('cmd.yaml', 'w') as f:
-            yaml.dump(first_command, f)
-            typer.secho("'cmd.yaml' created.",
-                        fg=typer.colors.CYAN, bold=True)
+        save_cmd_yaml(first_command, 'w', False)
+        echo_file_created()
 
 
 @app.command()
@@ -250,25 +191,13 @@ def add(
                           'Do you want to overwrite?',
                           abort=True)
             tcommands[key] = val  # type: ignore
-            with open('cmd.yaml', 'w') as f:
-                yaml.dump(tcommands, f, sort_keys=False, indent=2)
-
-            typer.secho(f"Command changed for name '{key}' in cmd.yaml",
-                        fg=typer.colors.CYAN,
-                        bold=True)
+            save_cmd_yaml(tcommands, 'w', True)
+            echo_cmd_changed(key)
         else:
-            with open('cmd.yaml', 'a') as f:
-                data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
-                yaml.dump(data, f)
-            typer.secho("Command added in cmd.yaml",
-                        fg=typer.colors.CYAN,
-                        bold=True)
-
-    else:
-        with open('cmd.yaml', 'a') as f:
             data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
-            yaml.dump(data, f)
-
-        typer.secho("Command added in cmd.yaml",
-                    fg=typer.colors.CYAN,
-                    bold=True)
+            save_cmd_yaml(data, 'a', True)
+            echo_cmd_added()
+    else:
+        data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
+        save_cmd_yaml(data, 'a', True)
+        echo_cmd_added()
