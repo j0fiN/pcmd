@@ -175,7 +175,7 @@ def inspect() -> None:
             typer.secho(f"\tERROR in file : \n{e}",
                         fg=typer.colors.RED,
                         bold=True)
-        except (UnicodeDecodeError, yaml.reader.ReaderError) as e:
+        except (yaml.reader.ReaderError, yaml.scanner.ScannerError) as e:
             typer.secho(f"\tERROR in file : /n/t{e}",
                         fg=typer.colors.RED,
                         bold=True)
