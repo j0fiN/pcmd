@@ -235,40 +235,40 @@ def fish() -> None:
 
 @app.command()
 def add(
-    key:str = typer.Option(..., '--key', '-k', 
-                           prompt="Enter custom name"),
-    val:str = typer.Option(..., '--value', '-v',
-                           prompt="Enter command")
+    key: str = typer.Option(..., '--key', '-k',
+                            prompt="Enter custom name"),
+    val: str = typer.Option(..., '--value', '-v',
+                            prompt="Enter command")
 ) -> None:
     """
     Adds commands into the cmd.yaml using --key(-k) and --value(-v)
     """
     if os.path.exists('cmd.yaml'):
         tcommands = get_commands()
-        if key in [*tcommands]:
-            conf = typer.confirm('Custom name already exists.'
-                                'Do you want to overwrite?', 
-                                abort=True)
-            tcommands[key] = val
+        if key in [*tcommands]:  # type: ignore
+            typer.confirm('Custom name already exists.'
+                          'Do you want to overwrite?',
+                          abort=True)
+            tcommands[key] = val  # type: ignore
             with open('cmd.yaml', 'w') as f:
                 yaml.dump(tcommands, f, sort_keys=False, indent=2)
-            
+
             typer.secho(f"Command changed for name '{key}' in cmd.yaml",
-                    fg=typer.colors.CYAN,
-                    bold=True)
+                        fg=typer.colors.CYAN,
+                        bold=True)
         else:
             with open('cmd.yaml', 'a') as f:
                 data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
                 yaml.dump(data, f)
             typer.secho("Command added in cmd.yaml",
-                    fg=typer.colors.CYAN,
-                    bold=True)
-    
+                        fg=typer.colors.CYAN,
+                        bold=True)
+
     else:
         with open('cmd.yaml', 'a') as f:
             data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
             yaml.dump(data, f)
-        
+
         typer.secho("Command added in cmd.yaml",
                     fg=typer.colors.CYAN,
                     bold=True)
