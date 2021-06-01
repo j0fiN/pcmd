@@ -13,6 +13,17 @@ Todo:
     ✔ handling Scanner Error @done(21-06-01 15:18)
     ☐ Add inspection for trailing newline.
     ☐ Removing repeated coding.
+    ✔ Pushed code coverage to 100% @done(21-06-01 21:54)
+
+Future:
+    ☐ Maybe adding other file formats too.
+
+Points:
+    ☐ Update docs in mkdocs
+    ☐ Update docs in the callback, main.py
+    ☐ Update the test for the developed piece of code.
+    ☐ Change versions in poetry and callbacks
+    ☐ check each command in person with all possibility.
 
 Archive:
     ✘ resources page, with blogs and stuff. @cancelled(21-05-31 17:47)
