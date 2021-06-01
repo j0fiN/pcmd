@@ -45,3 +45,4 @@ main-hi: echo "Hi main"
 p: poetry run python -m pcmd
 r: poetry run python -m pcmd run cd-test
 test: poetry run pytest
+a: poetry run py -m add

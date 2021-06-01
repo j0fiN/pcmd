@@ -3,6 +3,7 @@ import typer
 import os  # type: ignore
 import subprocess
 from typing import Dict, List, Optional, Union
+from collections import OrderedDict
 app = typer.Typer()
 
 egg = """
@@ -229,5 +230,29 @@ def fish() -> None:
                 fg=typer.colors.CYAN,
                 bold=True)
     typer.secho("Author\t:\thttps://jofin-f-archbald.herokuapp.com/",
+                fg=typer.colors.CYAN,
+                bold=True)
+
+@app.command()
+def add(
+    key:str = typer.Option(..., '--key', '-k', 
+                           prompt="Enter custom name"),
+    val:str = typer.Option(..., '--value', '-v',
+                           prompt="Enter command")
+) -> None:
+    """
+    Adds commands into the cmd.yaml using --key(-k) and --value(-v)
+    """
+    commands = get_commands()
+    if key in list(commands.keys()):
+        conf = typer.confirm('Custom name already exists.'
+                             'Do you want to overwrite?', 
+                             abort=True)
+        commands[key] = val
+
+    with open('cmd.yaml', 'a') as f:
+        yaml.dump({key: val}, f)
+    
+    typer.secho("Command added in cmd.yaml",
                 fg=typer.colors.CYAN,
                 bold=True)
