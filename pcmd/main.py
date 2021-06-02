@@ -1,12 +1,12 @@
 import yaml
 import typer
 import os  # type: ignore
-import subprocess
 from .__init__ import __version__  # type: ignore
 from .__core__ import (
     get_commands,
     prettier, save_cmd_yaml,
-    add_load_and_save_echo
+    add_load_and_save_echo,
+    run_command
 )
 from .__echoes__ import (
     echo_file_created,
@@ -24,17 +24,17 @@ from .__echoes__ import (
     echo_inspect_header,
     echo_fish
 )
-from .__const__ import EGG, URLS
+from .__const__ import EGG, URLS, EXCEPTIONS
 app = typer.Typer()
 
 
 # THESE FUNCTIONS ARE FOR CLI's COMMANDS
 @app.callback()
 def callback() -> None:
-    f"""
+    """
     PCMD\n
     A super simple terminal command shortener\n
-    Version : {__version__}\n
+    Version : v2.1.0\n
     """
 
 
@@ -52,17 +52,9 @@ def run(command: str) -> None:
             cmds = commands[command]
             if type(cmds).__name__ == 'list':
                 for cmd in cmds:
-                    if cmd.split(" ")[0] == "cd":  # type: ignore
-                        os.chdir(cmd.split(" ")[1].replace('\\', '\\\\'))
-                    else:
-                        subprocess.run(cmd.split(" "), shell=True)
+                    run_command(cmd)
             else:
-                if cmds.split(" ")[0] == "cd":  # type: ignore
-                    os.chdir(
-                        cmds.split(" ")[1].replace('\\',  # type: ignore
-                                                   '\\\\'))
-                else:
-                    subprocess.run(cmds.split(" "), shell=True)  # type: ignore
+                run_command(cmds)
         except KeyError:
             echo_cmd_not_found()
 
@@ -92,7 +84,9 @@ def list(
 
 @app.command()
 def inspect() -> None:
-    """Checks if cmd.yaml exists and validates it."""
+    """
+    Checks if cmd.yaml exists and validates it.
+    """
     echo_inspect_header()
     if os.path.exists('cmd.yaml'):
         echo_file_found()
@@ -103,11 +97,9 @@ def inspect() -> None:
                     echo_file_valid()
                 else:
                     echo_file_empty()
-        except (yaml.reader.ReaderError, yaml.scanner.ScannerError) as e:
+        except EXCEPTIONS as e:
             echo_file_error(e)
             echo_info_del_init()
-        except yaml.YAMLError as e:
-            echo_file_error(e)
     else:
         echo_file_not_found()
         echo_info_init()
@@ -116,7 +108,8 @@ def inspect() -> None:
 @app.command()
 def init(force: bool = typer.Option(False, "--force", "-f")) -> None:
     """Creates a cmd.yaml (if file exists, deletes
-     (if --force (-f) is used) or leaves it)."""
+     (if --force (-f) is used) or leaves it)
+    """
     if os.path.exists('cmd.yaml'):
         if force:
             os.remove("cmd.yaml")

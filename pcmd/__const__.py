@@ -1,4 +1,6 @@
 # contains some constants
+import yaml
+
 
 EGG = """
 |\\   \\\\\\\\__     o
@@ -22,3 +24,8 @@ URLS = {
     'docs': 'https://j0fin.github.io/pcmd/',
     'author': 'https://jofin-f-archbald.herokuapp.com/'
 }
+
+
+EXCEPTIONS = (yaml.reader.ReaderError,
+              yaml.scanner.ScannerError,
+              yaml.YAMLError)

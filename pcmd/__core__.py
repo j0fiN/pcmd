@@ -1,6 +1,8 @@
 # THESE FUNCTIONS ARE FOR CLI's BACKEND
+import os  # type: ignore
 import yaml
 import typer
+import subprocess
 from typing import Dict, List, Optional, Union, Any
 from .__echoes__ import echo_cmd_added
 
@@ -45,3 +47,10 @@ def add_load_and_save_echo(key: str, val: str) -> None:
     data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
     save_cmd_yaml(data, 'a', True)
     echo_cmd_added()
+
+
+def run_command(cmd: Union[List[str], str]) -> None:
+    if cmd.split(' ')[0] == 'cd':  # type: ignore
+        os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))  # type: ignore
+    else:
+        subprocess.run(cmd.split(" "), shell=True)  # type: ignore
