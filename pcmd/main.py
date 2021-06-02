@@ -2,7 +2,12 @@ import yaml
 import typer
 import os  # type: ignore
 import subprocess
-from .__core__ import get_commands, prettier, save_cmd_yaml
+from .__init__ import __version__  # type: ignore
+from .__core__ import (
+    get_commands,
+    prettier, save_cmd_yaml,
+    add_load_and_save_echo
+)
 from .__echoes__ import (
     echo_file_created,
     echo_file_empty,
@@ -11,40 +16,25 @@ from .__echoes__ import (
     echo_file_found,
     echo_file_not_found,
     echo_file_valid,
-    echo_cmd_added,
     echo_cmd_changed,
     echo_cmd_not_found,
     echo_info_del_init,
     echo_info_init,
     echo_list_header,
     echo_inspect_header,
+    echo_fish
 )
+from .__const__ import EGG, URLS
 app = typer.Typer()
-
-egg = """
-|\\   \\\\\\\\__     o
-| \\_/    o \\    o
- > _   (( <_  oo
-| / \\__+___/
-|/     |/
-                             _
- _ __    ___  _ __ ___    __| |
-| '_ \\  / __|| '_ ` _ \\  / _` |
-| |_) || (__ | | | | | || (_| |
-| .__/  \\___||_| |_| |_| \\__,_|
-|_|
-
-"""
 
 
 # THESE FUNCTIONS ARE FOR CLI's COMMANDS
 @app.callback()
 def callback() -> None:
-    """
+    f"""
     PCMD\n
     A super simple terminal command shortener\n
-    Version : v2.1.0\n
-    Source : https://github.com/j0fiN/pcmd
+    Version : {__version__}\n
     """
 
 
@@ -144,19 +134,12 @@ def init(force: bool = typer.Option(False, "--force", "-f")) -> None:
 @app.command()
 def fish() -> None:
     """PCMD"""
-    typer.secho(egg, fg=typer.colors.CYAN, bold=True)
-    typer.secho("Source\t:\thttps://github.com/j0fiN/pcmd",
-                fg=typer.colors.CYAN,
-                bold=True)
-    typer.secho("Docs\t:\thttps://j0fin.github.io/pcmd/",
-                fg=typer.colors.CYAN,
-                bold=True)
-    typer.secho("Pypi\t:\thttps://pypi.org/project/pcmd/",
-                fg=typer.colors.CYAN,
-                bold=True)
-    typer.secho("Author\t:\thttps://jofin-f-archbald.herokuapp.com/",
-                fg=typer.colors.CYAN,
-                bold=True)
+    echo_fish(EGG)
+    echo_fish(f"Version\t:\t{__version__}")
+    echo_fish(f"Source\t:\t{URLS['github']}")
+    echo_fish(f"Docs\t:\t{URLS['docs']}")
+    echo_fish(f"Pypi\t:\t{URLS['pypi']}")
+    echo_fish(f"Author\t:\t{URLS['author']}")
 
 
 @app.command()
@@ -179,10 +162,6 @@ def add(
             save_cmd_yaml(tcommands, 'w', True)
             echo_cmd_changed(key)
         else:
-            data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
-            save_cmd_yaml(data, 'a', True)
-            echo_cmd_added()
+            add_load_and_save_echo(key, val)
     else:
-        data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
-        save_cmd_yaml(data, 'a', True)
-        echo_cmd_added()
+        add_load_and_save_echo(key, val)
