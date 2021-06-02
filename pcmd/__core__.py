@@ -2,6 +2,7 @@
 import yaml
 import typer
 from typing import Dict, List, Optional, Union, Any
+from .__echoes__ import echo_cmd_added
 
 
 def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
@@ -38,3 +39,9 @@ def save_cmd_yaml(data: Any, status: str, extra: bool) -> None:
             yaml.dump(data, f, sort_keys=False, indent=2)
         else:
             yaml.dump(data, f, sort_keys=False, indent=2)
+
+
+def add_load_and_save_echo(key: str, val: str) -> None:
+    data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
+    save_cmd_yaml(data, 'a', True)
+    echo_cmd_added()
