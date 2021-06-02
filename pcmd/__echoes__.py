@@ -103,3 +103,9 @@ def echo_info_init():
                 "create cmd.yaml file",
                 fg=typer.colors.CYAN,
                 bold=True)
+
+
+def echo_fish(string: str):
+    typer.secho(string,
+                fg=typer.colors.CYAN,
+                bold=True)
