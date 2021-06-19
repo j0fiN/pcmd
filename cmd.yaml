@@ -36,7 +36,7 @@ check-global:
 dir: dir
 doc: poetry run mkdocs serve
 test: poetry run pytest
-a: poetry run py -m add
+a: poetry run py -m pcmd add
 f: poetry run python -m pcmd fish
 i: poetry run python -m pcmd init
 is: poetry run python -m pcmd inspect
