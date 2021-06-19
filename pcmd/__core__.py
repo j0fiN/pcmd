@@ -8,6 +8,9 @@ from .__echoes__ import echo_cmd_added
 
 
 def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
+    '''
+    Parse yaml file and returns the commands in dict format.
+    '''
     try:
         with open('cmd.yaml') as f:
             data = yaml.load(f, Loader=yaml.BaseLoader) or {}
@@ -17,6 +20,9 @@ def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
 
 
 def prettier(commands: dict) -> None:
+    '''
+    Option for list command. Prints the commands prettily.
+    '''
     for key in commands:
         if type(commands[key]).__name__ == 'list':
 
@@ -36,6 +42,9 @@ def prettier(commands: dict) -> None:
 
 
 def save_cmd_yaml(data: Any, status: str, extra: bool) -> None:
+    '''
+    Saves data back to pcmd file depending on the write status
+    '''
     with open('cmd.yaml', status) as f:
         if extra is True:
             yaml.dump(data, f, sort_keys=False, indent=2)
