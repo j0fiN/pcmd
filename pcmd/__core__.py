@@ -1,4 +1,16 @@
-# THESE FUNCTIONS ARE FOR CLI's BACKEND
+"""
+    __core__
+    ~~~~~~~
+    Core backend functions of pcmd.
+
+    FUNCTIONS
+    ~~~~~~~
+    get_commands
+    prettier
+    save_cmd_yaml
+    add_load_and_save_echo
+    run_command
+"""
 import os  # type: ignore
 import yaml
 import typer
@@ -43,7 +55,7 @@ def prettier(commands: dict) -> None:
 
 def save_cmd_yaml(data: Any, status: str, extra: bool) -> None:
     '''
-    Saves data back to pcmd file depending on the write status
+    Saves data back to pcmd file depending on the write status.
     '''
     with open('cmd.yaml', status) as f:
         if extra is True:
@@ -53,12 +65,19 @@ def save_cmd_yaml(data: Any, status: str, extra: bool) -> None:
 
 
 def add_load_and_save_echo(key: str, val: str) -> None:
+    '''
+    Gets custom name and command and parses it to yaml object,
+    , saves it and echoes info.
+    '''
     data = yaml.load(f"\n{key}: {val}", Loader=yaml.BaseLoader)
     save_cmd_yaml(data, 'a', True)
     echo_cmd_added()
 
 
 def run_command(cmd: Union[List[str], str]) -> None:
+    '''
+    Runs the commands using subprocess and chdir.
+    '''
     if cmd.split(' ')[0] == 'cd':  # type: ignore
         os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))  # type: ignore
     else:

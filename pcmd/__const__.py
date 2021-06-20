@@ -1,4 +1,14 @@
-# contains some constants
+"""
+    __const__
+    ~~~~~~~
+    Constants of pcmd.
+
+    CONSTANTS
+    ~~~~~~~
+    EGG
+    URLS
+    EXCEPTIONS
+"""
 import yaml
 
 

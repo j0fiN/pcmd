@@ -1,3 +1,18 @@
+"""
+    main
+    ~~~~~~~
+    Command functions of the pcmd CLI.
+
+    FUNCTIONS
+    ~~~~~~~
+    callback
+    run
+    list
+    inspect
+    init
+    fish
+    add
+"""
 import yaml
 import typer
 import os  # type: ignore
@@ -28,7 +43,6 @@ from .__const__ import EGG, URLS, EXCEPTIONS
 app = typer.Typer()
 
 
-# THESE FUNCTIONS ARE FOR CLI's COMMANDS
 @app.callback()
 def callback() -> None:
     """

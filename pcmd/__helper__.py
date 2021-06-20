@@ -1,4 +1,16 @@
-#  Functions for testing purposes.
+"""
+    __helper__
+    ~~~~~~~
+    Helper functions for unittesting pcmd.
+
+    FUNCTIONS
+    ~~~~~~~
+    f_remove
+    f_add
+    f_syntax_err
+    f_scan_err
+    f_empty
+"""
 import os
 import yaml
 

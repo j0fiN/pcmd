@@ -1,9 +1,27 @@
-# Contains functions of typer.echo() and typer.secho() function
+"""
+    __echoes__
+    ~~~~~~~
+    Functions of typer.echo() and typer.secho() function
+
+    FUNCTIONS
+    ~~~~~~~
+    echo_file_not_found
+    echo_file_created
+    echo_file_exist
+    echo_file_empty
+    echo_file_found
+    echo_file_error
+    echo_file_valid
+    echo_cmd_not_found
+    echo_cmd_changed
+    echo_cmd_added
+    generate_path
+    echo_fish
+"""
 import typer
 import os
 
 
-# Echoes for file handles
 def echo_file_not_found():
     typer.secho("FileNotFound: Please make sure "
                 "that your file name is cmd.yaml",
