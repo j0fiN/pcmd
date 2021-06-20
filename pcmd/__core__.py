@@ -11,15 +11,15 @@
     add_load_and_save_echo
     run_command
 """
-import os  # type: ignore
+import os
 import yaml
 import typer
 import subprocess
-from typing import Dict, List, Optional, Union, Any
+from typing import Optional, Any
 from .__echoes__ import echo_cmd_added
 
 
-def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
+def get_commands() -> Optional[dict]:
     '''
     Parse yaml file and returns the commands in dict format.
     '''
@@ -29,6 +29,17 @@ def get_commands() -> Optional[Dict[str, Union[List[str], str]]]:
             return data
     except FileNotFoundError:
         return None
+
+
+def get_commands_list() -> list:
+    '''
+    Gets the custom names in a list
+    '''
+    commands = get_commands()
+    if commands is None:
+        return []
+    else:
+        return list(commands.keys())
 
 
 def prettier(commands: dict) -> None:
@@ -74,11 +85,11 @@ def add_load_and_save_echo(key: str, val: str) -> None:
     echo_cmd_added()
 
 
-def run_command(cmd: Union[List[str], str]) -> None:
+def run_command(cmd: str) -> None:
     '''
     Runs the commands using subprocess and chdir.
     '''
-    if cmd.split(' ')[0] == 'cd':  # type: ignore
-        os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))  # type: ignore
+    if cmd.split(' ')[0] == 'cd':
+        os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))
     else:
-        subprocess.run(cmd.split(" "), shell=True)  # type: ignore
+        subprocess.run(cmd.split(" "), shell=True)

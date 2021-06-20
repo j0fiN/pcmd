@@ -15,13 +15,14 @@
 """
 import yaml
 import typer
-import os  # type: ignore
+import os
 from .__init__ import __version__  # type: ignore
 from .__core__ import (
     get_commands,
     prettier, save_cmd_yaml,
     add_load_and_save_echo,
-    run_command
+    run_command,
+    get_commands_list
 )
 from .__echoes__ import (
     echo_file_created,
