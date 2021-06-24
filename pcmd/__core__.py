@@ -17,6 +17,7 @@ import typer
 import subprocess
 from typing import Optional, Any
 from .__echoes__ import echo_cmd_added
+from distance import levenshtein as lev  # type: ignore
 
 
 def get_commands() -> Optional[dict]:
@@ -36,10 +37,7 @@ def get_commands_list() -> list:
     Gets the custom names in a list
     '''
     commands = get_commands()
-    if commands is None:
-        return []
-    else:
-        return list(commands.keys())
+    return list(commands.keys()) or []  # type: ignore
 
 
 def prettier(commands: dict) -> None:
@@ -93,3 +91,31 @@ def run_command(cmd: str) -> None:
         os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))
     else:
         subprocess.run(cmd.split(" "), shell=True)
+
+
+def did_you_mean(cmd: str):
+    '''
+    Did you mean to suggest available commands.
+    '''
+    d_list = [[lev(cmd, command), command]
+              for command in get_commands_list()]
+
+    result = []
+    d_list.sort(key=lambda x: x[0])
+    d_list = list(filter(lambda x: cmd in x[1], d_list))
+    for i in d_list[:2]:
+        result.append(i[1])
+    return result
+
+
+# Echoes for command handles
+def echo_cmd_not_found(cmd: str):
+    result = did_you_mean(cmd)
+    cmds = ""
+    for i in result:
+        cmds = cmds + i + ', '
+    message = f"Did you mean: {cmds[:-2]}?"
+    typer.secho(f"CommandNotFound: {message}",
+                fg=typer.colors.RED,
+                bold=True,
+                err=True)

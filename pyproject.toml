@@ -19,6 +19,7 @@ pcmd = "pcmd.main:app"
 python = "^3.6"
 typer = "^0.3.2"
 PyYAML = "^5.4.1"
+Distance = "^0.1.3"
 
 
 

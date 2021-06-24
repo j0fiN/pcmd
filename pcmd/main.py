@@ -22,7 +22,7 @@ from .__core__ import (
     prettier, save_cmd_yaml,
     add_load_and_save_echo,
     run_command,
-    get_commands_list
+    echo_cmd_not_found
 )
 from .__echoes__ import (
     echo_file_created,
@@ -33,7 +33,6 @@ from .__echoes__ import (
     echo_file_not_found,
     echo_file_valid,
     echo_cmd_changed,
-    echo_cmd_not_found,
     echo_info_del_init,
     echo_info_init,
     echo_list_header,
@@ -71,7 +70,7 @@ def run(command: str) -> None:
             else:
                 run_command(cmds)
         except KeyError:
-            echo_cmd_not_found()
+            echo_cmd_not_found(command)
 
 
 @app.command()

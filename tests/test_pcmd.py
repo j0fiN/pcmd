@@ -119,3 +119,8 @@ def test_cd():
     assert result.exit_code == 1
     result = runner.invoke(app, ["run", "cd-test"])
     assert result.exit_code == 1
+
+
+def test_run_not_working():
+    result = runner.invoke(app, ["run", "cd"])
+    assert result.exit_code == 0

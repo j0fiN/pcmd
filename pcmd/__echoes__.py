@@ -67,16 +67,6 @@ def echo_file_valid():
                 bold=True)
 
 
-# Echoes for command handles
-def echo_cmd_not_found():
-    typer.secho("CommandNotFound: Please make sure "
-                "that you have assigned a command to "
-                "this name in cmd.yaml",
-                fg=typer.colors.RED,
-                bold=True,
-                err=True)
-
-
 def echo_cmd_changed(key):
     typer.secho("Command changed for name "
                 f"'{key}' in cmd.yaml",
