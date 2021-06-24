@@ -13,7 +13,7 @@
     fish
     add
 """
-import yaml
+import yaml  # type: ignore
 import typer
 import os
 from .__init__ import __version__  # type: ignore

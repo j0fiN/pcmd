@@ -9,7 +9,7 @@
     URLS
     EXCEPTIONS
 """
-import yaml
+import yaml  # type: ignore
 
 
 EGG = """

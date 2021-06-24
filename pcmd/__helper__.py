@@ -12,7 +12,7 @@
     f_empty
 """
 import os
-import yaml
+import yaml  # type: ignore
 
 
 def f_remove():
