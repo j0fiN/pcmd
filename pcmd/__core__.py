@@ -12,7 +12,7 @@
     run_command
 """
 import os
-import yaml
+import yaml  # type: ignore
 import typer
 import subprocess
 from typing import Optional, Any
