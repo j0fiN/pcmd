@@ -31,6 +31,13 @@ It is the most commonly used yaml parser in the language.
 !!! success "pcmd uses it for"
     All the works related to `cmd.yaml`. The `inspect` command uses pyaml exceptions to handle syntax errors in `cmd.yaml`.
 
+### <a href="https://pypi.org/project/Distance/" class="link" target="_blank">Distance</a>
+Distance is a Utilities library for comparing sequences.
+
+!!! success "pcmd uses it for"
+    Finding the levenshtein distance to suggest custom commands when user inputs the wrong name
+    (name that does not exist in cmd.yaml).
+
 
 ## Inspiration and Idea - From the author of pcmd.
 

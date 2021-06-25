@@ -1,6 +1,15 @@
 # Releases
 From **v1.2.3** onwards, git commits will NOT be recorded here.  
 Check out <a href="https://github.com/j0fiN/pcmd/blob/main/CHANGELOG.md" class="link" target="_blank">CHANGELOG.md</a> for git commits record.
+
+## v2.2.0
+### :sparkles: `add` command
+- [x] :tada: Added `add` command which allows users to add their single command along with its custom name.
+- [x] :hammer: Suggestion system built to help users when they type the wrong name.
+- [x] :art: Complete codebase refactored.
+- [x] :wrench: Reduced types complexity.
+
+
 ## v2.1.0
 ### Feature
 - [x] :bug: :ambulance: Fixed extras installation.

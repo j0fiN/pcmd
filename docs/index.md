@@ -19,6 +19,11 @@ Source code : <a href="https://github.com/j0fiN/pcmd" class="link" target="_blan
 
 ---
 
+!!! Success "v2.2.0 OUT NOW!"
+    pcmd has been updated to v2.2.0!  
+    `add` command has been introduced.
+    <a href="https://j0fin.github.io/pcmd/user_guide.html#add" class="link" target="_blank">Check it out!</a>
+
 ## About
 During daily development, it can be frustrating,
 

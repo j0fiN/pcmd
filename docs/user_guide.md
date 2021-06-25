@@ -25,6 +25,20 @@ and the `cmd.yaml` will have,
 hi: echo Hi from pcmd!
 ```
 ---
+
+### `add`
+The `add` command lets you add single commands with custom name (an append operation).  
+
+- `--key(-k)` - Adds custom name
+- `--value(-v)` - Adds the command
+
+Commands can also be interactively added by using just ```pcmd add```
+```sh-ssession
+$ pcmd add
+Enter custom name: docker
+Enter command: docker run
+Command added in cmd.yaml
+```
 ### `inspect`
 Inspects if `cmd.yaml` exists and if there are any *syntax* errors or *encoding* errors.
 ```sh-ssession
