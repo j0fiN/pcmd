@@ -1,17 +1,19 @@
+Since I work single-handedly, I really need this file to keep track of stuffs!
+
 Todo:
     ☐ Update changelogs in docs and here.
     ☐ Write a blog too.
-    ☐ Add `add` command in docs
+    ✔ Add `add` command in docs @done(21-06-24 21:17)
     ☐ Sheduled release
     ☐ Thinking other features too.
     ☐ Publish release in github.
-    ☐ Adding autocomplete feature for the command @feature
+    ✘ Adding autocomplete feature for the command @feature @cancelled(21-06-24 21:17)
     ✔ `add` command @high @done(21-06-01 15:32)
     ✔ Add command testing @done(21-06-01 15:32)
     ✘ Converting everything to ordered dict? @critical @cancelled(21-06-01 12:47)
-    ☐ Rendering comments when writing.
+    ✘ Rendering comments when writing. @cancelled(21-06-24 21:17)
     ✔ handling Scanner Error @done(21-06-01 15:18)
-    ☐ Add inspection for trailing newline.
+    ✘ Add inspection for trailing newline. @cancelled(21-06-24 21:17)
     ✔ Removing repeated coding. @done(21-06-24 17:52)
     ✔ Pushed code coverage to 100% @done(21-06-01 21:54)
     ✘ `addm` command for mmultiple command additions @cancelled(21-06-24 17:52)
@@ -19,14 +21,15 @@ Todo:
     ✔ Add comments in every function in @__core__.py @done(21-06-20 21:16)
     ✔ Remove complex types in commands and remove types ignores @done(21-06-20 22:03)
 Future:
-    ☐ Maybe adding other file formats too.
+    ✘ Maybe adding other file formats too. @cancelled(21-06-24 21:18)
 
 Points:
     ☐ Update docs in mkdocs
     ☐ Update docs in the callback, main.py
     ☐ Update the test for the developed piece of code.
-    ☐ Change versions in poetry and callbacks
+    ☐ Change versions in poetry, callbacks and Pypi.readme and readme and fish command.
     ☐ check each command in person with all possibility.
+    ☐ Final changelog.md
 
 Archive:
     ✘ resources page, with blogs and stuff. @cancelled(21-05-31 17:47)
