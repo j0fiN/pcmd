@@ -16,6 +16,7 @@ A single config file ...
 
 ... and your ready to go !
 
+Trust me, it is better than bash aliases!
 ## ><=> pcmd 
 - [Documentation](https://j0fin.github.io/pcmd/)
 - [Source Code](https://github.com/j0fiN/pcmd)

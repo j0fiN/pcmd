@@ -48,7 +48,7 @@ def callback() -> None:
     """
     PCMD\n
     A super simple terminal command shortener\n
-    Version : v2.1.0\n
+    Version : v2.2.0\n
     """
 
 

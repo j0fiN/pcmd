@@ -39,6 +39,7 @@ A single config file :wrench: ...
 
 ... and your ready to go :rocket: !
 
+Trust me, it is better than bash aliases!
 
 ![animation](https://github.com/j0fiN/pcmd/blob/main/docs/Animation.gif)
 
