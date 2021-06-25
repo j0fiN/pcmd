@@ -1,4 +1,63 @@
+## v2.2.0
+### :sparkles: `add` command and major refactoring
+> :tada: Introducing add command to add command from terminal.  
+> :art: Complete codebase refactoring.  
+> :white_check_mark: 100% code coverage.  
+> :hammer: Command suggestion system added.  
+
+#### Commits
+- :memo: v2.2.0 Updated
+- :bookmark: v2.2.0
+- Merge pull request #9 from j0fiN/dependabot/pip/mypy-0.910
+- Added Distance module
+- missed ignore yaml types in core
+- :label: Ignored type check for yaml
+- :arrow_up: Bump mypy from 0.812 to 0.910
+- :sparkles: Added cmd suggestion for wrong input
+- :label: Reduced types & :hammer: added fn for list
+- :memo: Added meta data for all py files
+- :memo: docs under construction
+- :pencil2: typo in add command
+- :memo: Updated
+- :recycle: Refactoring codebase
+- :recycle: Refactored code base
+- :recycle: Moved fish cmd echo funnction into __echoes__
+- :hammer: Added Script which contains all constants.
+- :recycle: Moved add_cmd_save function into core.
+- :memo: Updated
+- :white_check_mark: Updated imports and codecov
+- :bug: :tada: Codecov now 100% !
+- :art: Called functions from __core__ and __echoes__
+- :art: Moved echo functions into __echoes__.py
+- :hammer: Moved tester functions into __helper__.py
+- :hammer: pushed core functions into __core__.py
+- :memo: Updated
+- :recycle: Fixed linter and  ignore mypy
+- :white_check_mark: Added tests for add command
+- :hammer: Changed indent nnumber
+- :hammer: Updated error handles
+- :fish: Added additional stuffs for add command
+- :hammer: Updated the loader to BaseLoader
+- :hammer: Added add command
+- :art: Refactored the file
+- :construction: Building file handling.
+- :construction: Building add command
+- :memo:  Updated
+- :memo: rough_sheet moved to TODO
+- Merge pull request #4 from j0fiN/dependabot/pip/mkdocs-material-7.1.6
+- :arrow_up: Bump mkdocs-material from 7.1.5 to 7.1.6
+- :pencil2: changed the file format of gif
+- :memo: Added gif
+- :camera_flash: Added gif for Readme.
+- Create dependabot.yml
+
+
+## v2.1.0
+### :bug: Fixed extras deps
+
+
 ## v2.0.0
+
 ### :sparkles: Major changes, and :wrench: integrations
 > :art: complete theme change from purple to cyan.  
 > :wrench: python 3.6 compatability (prev versions were 3.8 and above).  
