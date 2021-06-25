@@ -10,6 +10,8 @@
     save_cmd_yaml
     add_load_and_save_echo
     run_command
+    did_you_mean
+    echo_cmd_not_found
 """
 import os
 import yaml  # type: ignore
