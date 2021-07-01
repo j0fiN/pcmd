@@ -1,4 +1,4 @@
-# Exceptor
+# pcmd
 <figure>
   <img alt="logo banner" src="https://github.com/j0fiN/pcmd/blob/main/docs/logo_banner.svg"/>
   <figcaption>A super simple terminal command shortener 🐟</figcaption>
