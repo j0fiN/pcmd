@@ -8,10 +8,10 @@
     run
     main
 """
-from typing import List
+from typing import Tuple
 
 
-def run(command: str, args:List[str]) -> None:
+def run(command: str, args: Tuple[str]) -> None:
     '''
     Adds the arguments wherever $ symbol is found
     '''
