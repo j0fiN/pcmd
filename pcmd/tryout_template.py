@@ -6,18 +6,25 @@
     FUNCTIONS
     ~~~~~~~
 
+    CLASSES
+    ~~~~~~~
+    Template
+    TemplateProcessor
 """
-from dataclasses import dataclass
+# from dataclasses import dataclass not compatible in py - 3.6
 from typing import Optional, Tuple
 
 
-@dataclass
 class Template:
-    __heading: str
-    __template: str
+    def __init__(self, heading: str, template: str):
+        self.__heading = heading
+        self.__template = template
 
     def get(self) -> Tuple[str, str]:
         return (self.__heading, self.__template)
+
+    def __repr__(self):
+        return str(self.__dict__)
 
 
 class TemplateProcessor:
