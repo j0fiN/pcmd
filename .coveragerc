@@ -6,6 +6,7 @@ source =
 
 omit =
     pcmd/__main__.py
+    pcmd/tryouts/*
     /Users/**/*
     */site-packages/**/*
 
