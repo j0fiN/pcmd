@@ -84,7 +84,7 @@ python-versions = "*"
 python-dateutil = ">=2.8.1"
 
 [package.extras]
-dev = ["twine", "markdown", "flake8"]
+dev = ["twine", "markdown", "flake8", "wheel"]
 
 [[package]]
 name = "importlib-metadata"
@@ -179,7 +179,7 @@ i18n = ["babel (>=2.9.0)"]
 
 [[package]]
 name = "mkdocs-material"
-version = "7.2.5"
+version = "7.3.0"
 description = "A Material Design theme for MkDocs"
 category = "dev"
 optional = false
@@ -464,7 +464,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "51f2ba28a313acc1ff65869bb4afd1f1e9ca13c8191d05d2e4372f52df678e0e"
+content-hash = "341bb05a49379274db8d82bdb07332ada95ff8f824eb5d6c50d53abd5608f33e"
 
 [metadata.files]
 atomicwrites = [
@@ -546,6 +546,7 @@ flake8 = [
 ]
 ghp-import = [
     {file = "ghp-import-2.0.1.tar.gz", hash = "sha256:753de2eace6e0f7d4edfb3cce5e3c3b98cd52aadb80163303d1d036bda7b4483"},
+    {file = "ghp_import-2.0.1-py3-none-any.whl", hash = "sha256:8241a8e9f8dd3c1fafe9696e6e081b57a208ef907e9939c44e7415e407ab40ea"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-4.0.1-py3-none-any.whl", hash = "sha256:d7eb1dea6d6a6086f8be21784cc9e3bcfa55872b52309bc5fad53a8ea444465d"},
@@ -628,8 +629,8 @@ mkdocs = [
     {file = "mkdocs-1.2.2.tar.gz", hash = "sha256:a334f5bd98ec960638511366eb8c5abc9c99b9083a0ed2401d8791b112d6b078"},
 ]
 mkdocs-material = [
-    {file = "mkdocs-material-7.2.5.tar.gz", hash = "sha256:e2a3aa5e20fbdb260d22ec56c01247896c6ae743702e1cd9023fd149a4ae9890"},
-    {file = "mkdocs_material-7.2.5-py2.py3-none-any.whl", hash = "sha256:332bafc1584d2d229aa05f7894b4b0f62055fc0d05c96e6ef1785c86ef6e8f91"},
+    {file = "mkdocs-material-7.3.0.tar.gz", hash = "sha256:07db0580fa96c3473aee99ec3fb4606a1a5a1e4f4467e64c0cd1ba8da5b6476e"},
+    {file = "mkdocs_material-7.3.0-py2.py3-none-any.whl", hash = "sha256:b183c27dc0f44e631bbc32c51057f61a3e2ba8b3c1080e59f944167eeba9ff1d"},
 ]
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.1.tar.gz", hash = "sha256:6947fb7f5e4291e3c61405bad3539d81e0b3cd62ae0d66ced018128af509c68f"},
