@@ -12,7 +12,9 @@
 <a href="https://j0fin.github.io/pcmd/"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/j0fiN/pcmd/ci?color=cyan&label=docs&logo=read-the-docs&logoColor=white"></a>
   <a href="https://pypi.org/project/pcmd/"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/pcmd?color=cyan&label=Pypi%20Downloads&logo=pypi&logoColor=cyan"></a>
 </p>
-
+<p align="center">
+          <img src = "https://img.shields.io/badge/For the love of code-Python-cyan?style=for-the-badge&logo=Python&logoColor=cyan">
+</p>
 ---
 
 Source code : <a href="https://github.com/j0fiN/pcmd" class="link" target="_blank">https://github.com/j0fiN/pcmd</a>
