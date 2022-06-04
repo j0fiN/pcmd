@@ -10,9 +10,9 @@ nav:
 extra_css:
   - stylesheets/extra.css
 theme:
+  favicon: assets/logo.svg
+  logo: assets/logo.svg
   name: material
-  logo: '../pcmd/logo.svg'
-  favicon: ../pcmd/logo.svg
   palette:
     scheme: slate
     primary: cyan
@@ -31,7 +31,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/j0fiN/
     - icon: fontawesome/regular/user
-      link: https://jofin-f-archbald.herokuapp.com/
+      link: https://jofin.herokuapp.com/
     - icon: octicons/mail-16
       link: mailto:jofinfab@gmail.com
     - icon: fontawesome/brands/linkedin
