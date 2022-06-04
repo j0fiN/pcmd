@@ -13,6 +13,7 @@
     fish
     add
 """
+from typing import Any, List, Optional, Tuple
 import yaml  # type: ignore
 import typer
 import os
@@ -53,10 +54,11 @@ def callback() -> None:
 
 
 @app.command()
-def run(command: str) -> None:
+def run(command: str, args: Optional[List[str]] = typer.Option(None, "--args", "-a")) -> None:
     """
     Run terminal command / runs multiple command chains.\n
     Check docs for warnings (pcmd fish for link).
+    
     """
     commands = get_commands()
     if commands is None:
@@ -66,9 +68,9 @@ def run(command: str) -> None:
             cmds = commands[command]
             if type(cmds).__name__ == 'list':
                 for cmd in cmds:
-                    run_command(cmd)
+                    run_command(cmd, args)
             else:
-                run_command(cmds)
+                run_command(cmds, args)
         except KeyError:
             echo_cmd_not_found(command)
 

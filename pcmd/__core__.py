@@ -18,9 +18,14 @@ import yaml  # type: ignore
 import typer
 import subprocess
 from typing import Optional, Any
-from .__echoes__ import echo_cmd_added
+from .__echoes__ import (
+    echo_cmd_added, 
+    echo_args_not_found_error,
+    echo_argument_limit_error
+)
 from distance import levenshtein as lev  # type: ignore
-
+import re
+PATTERN = "<[0-9]>"
 
 def get_commands() -> Optional[dict]:
     '''
@@ -85,14 +90,40 @@ def add_load_and_save_echo(key: str, val: str) -> None:
     echo_cmd_added()
 
 
-def run_command(cmd: str) -> None:
+def contains_placeholder(command: str) -> bool:
+    return False if re.findall(PATTERN, command) == [] else True
+
+def get_placeholder(command: str):
+    return re.findall(PATTERN, command)
+
+def get(arr, index):
+    try: 
+        return arr[index]
+    except:
+        return ""
+
+def run_command(cmd: str, args) -> None:
     '''
     Runs the commands using subprocess and chdir.
     '''
-    if cmd.split(' ')[0] == 'cd':
-        os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))
+    if len(args) > 10:
+        echo_argument_limit_error()
+    elif args == [] and contains_placeholder(cmd):
+        echo_args_not_found_error(cmd)
+    elif args == [] and contains_placeholder(cmd):
+        if cmd.split(' ')[0] == 'cd':
+            os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))
+        else:
+            subprocess.run(cmd.split(" "), shell=True)
     else:
-        subprocess.run(cmd.split(" "), shell=True)
+        placeholders = get_placeholder(cmd)
+        for placeholder in placeholders:
+            cmd = cmd.replace(placeholder, get(args, int(placeholder[1])))
+
+        if cmd.split(' ')[0] == 'cd':
+            os.chdir(cmd.split(' ')[1].replace('\\', '\\\\'))
+        else:
+            subprocess.run(cmd.split(" "), shell=True)
 
 
 def did_you_mean(cmd: str):
