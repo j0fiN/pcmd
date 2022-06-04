@@ -22,6 +22,13 @@ Todo:
     ✔ Remove complex types in commands and remove types ignores @done(21-06-20 22:03)
 Future:
     ✘ Maybe adding other file formats too. @cancelled(21-06-24 21:18)
+    ☐ Configured `argument` functionality.
+    ☐ Updates doc in code
+    ☐ Update doc in website
+    ☐ Build test
+    ☐ Update other checks
+    ☐ COnfiguring poetry
+    ☐ Deployments
 
 Points:
     ☐ Update docs in mkdocs
