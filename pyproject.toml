@@ -18,7 +18,7 @@ pcmd = "pcmd.main:app"
 [tool.poetry.dependencies]
 python = "^3.6"
 typer = "^0.3.2"
-PyYAML = "^5.4.1"
+PyYAML = ">=5.4.1,<7.0.0"
 Distance = "^0.1.3"
 
 
