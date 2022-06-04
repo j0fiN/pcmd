@@ -11,26 +11,17 @@
 from typing import Tuple
 
 
-def run(command: str, args: Tuple[str]) -> None:
+def add() -> None:
     '''
-    Adds the arguments wherever $ symbol is found
+    Adds the arguments wherever <num> symbol is found
+
+    IMPLEMENTED: ver2.2.0
     '''
-    # print(command)
-    for arg in args:
-        command = command.replace('$', arg, 1)
-    if command.count('$') > 0:
-        print('All the $ are not filled | ERROR')
-    else:
-        print(command, '| RUNNING')
+    ...
 
 
 def main():
-    cmd = "cd run $ swallow $"
-    args = ('fall',)
-    run(cmd, args)
-
-    args = ('fall', 'winter')
-    run(cmd, args)
+    ...
 
 
 if __name__ == "__main__":
