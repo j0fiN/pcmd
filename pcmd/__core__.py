@@ -9,6 +9,9 @@
     prettier
     save_cmd_yaml
     add_load_and_save_echo
+    contains_placeholder
+    get_placeholder
+    get
     run_command
     did_you_mean
     echo_cmd_not_found
@@ -25,7 +28,7 @@ from .__echoes__ import (
 )
 from distance import levenshtein as lev  # type: ignore
 import re
-PATTERN = "<[0-9]>"
+from .__const__ import PATTERN
 
 def get_commands() -> Optional[dict]:
     '''
@@ -91,12 +94,20 @@ def add_load_and_save_echo(key: str, val: str) -> None:
 
 
 def contains_placeholder(command: str) -> bool:
+    '''
+    Checks if a command contains a placeholder and returns
+    boolean result
+    '''
     return False if re.findall(PATTERN, command) == [] else True
 
 def get_placeholder(command: str):
+    '''
+    Returns all the placeholder in a command.
+    '''
     return re.findall(PATTERN, command)
 
 def get(arr, index):
+    '''Returns array elements by bypassing IndexError'''
     try: 
         return arr[index]
     except:
@@ -105,6 +116,8 @@ def get(arr, index):
 def run_command(cmd: str, args) -> None:
     '''
     Runs the commands using subprocess and chdir.
+    Checks for arguments and placeholder, and replaces 
+    the placeholder with the respective arguments before execution.
     '''
     if len(args) > 10:
         echo_argument_limit_error()

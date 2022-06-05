@@ -39,3 +39,6 @@ URLS = {
 EXCEPTIONS = (yaml.reader.ReaderError,
               yaml.scanner.ScannerError,
               yaml.YAMLError)
+
+
+PATTERN = "<[0-9]>"

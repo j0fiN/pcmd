@@ -46,10 +46,10 @@ app = typer.Typer()
 
 @app.callback()
 def callback() -> None:
-    """
+    f"""
     PCMD\n
     A super simple terminal command shortener\n
-    Version : v2.2.0\n
+    Version : {__version__}\n
     """
 
 
@@ -58,7 +58,10 @@ def run(command: str, args: Optional[List[str]] = typer.Option(None, "--args", "
     """
     Run terminal command / runs multiple command chains.\n
     Check docs for warnings (pcmd fish for link).
-    
+    --args or -a : provide arguments for placeholders for commands.\n
+    1. Arguments should not have blank space.\n
+    2. Arguments should be provided one by one with the flag\n
+    \t$ pcmd run server -a localhost -a 8000
     """
     commands = get_commands()
     if commands is None:

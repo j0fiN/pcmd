@@ -15,7 +15,13 @@
     echo_cmd_changed
     echo_cmd_added
     generate_path
+    echo_list_header
+    echo_inspect_header
+    echo_info_del_init
+    echo_info_init
     echo_fish
+    echo_args_not_found_error
+    echo_argument_limit_error
 """
 import typer
 import os
@@ -117,7 +123,7 @@ def echo_fish(string: str):
                 fg=typer.colors.CYAN,
                 bold=True)
 
-
+# Arguments feature echoes.
 def echo_args_not_found_error(cmd: str):
     typer.secho(f"\tERROR : Arguments not provided for the command \n{cmd}",
                 fg=typer.colors.RED,
