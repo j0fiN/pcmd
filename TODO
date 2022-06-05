@@ -20,10 +20,11 @@ Todo:
     ✔ Adding l distance for "did you mean <this command>?" @done(21-06-24 17:52)
     ✔ Add comments in every function in @__core__.py @done(21-06-20 21:16)
     ✔ Remove complex types in commands and remove types ignores @done(21-06-20 22:03)
-Future:
+Feature Flow - Steps when building a feature:
     ✘ Maybe adding other file formats too. @cancelled(21-06-24 21:18)
     ☐ Configured `argument` functionality.
     ☐ Updates doc in code
+    ☐ Update the doc at the top of the code file.
     ☐ Update doc in website
     ☐ Build test
     ☐ Update other checks
