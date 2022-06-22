@@ -13,7 +13,7 @@
     fish
     add
 """
-from typing import Any, List, Optional, Tuple
+from typing import List, Optional
 import yaml  # type: ignore
 import typer
 import os
@@ -54,7 +54,8 @@ def callback() -> None:
 
 
 @app.command()
-def run(command: str, args: Optional[List[str]] = typer.Option(None, "--args", "-a")) -> None:
+def run(command: str, args: Optional[List[str]] = typer.Option(None, "--args",
+        "-a")) -> None:
     """
     Run terminal command / runs multiple command chains.\n
     Check docs for warnings (pcmd fish for link).

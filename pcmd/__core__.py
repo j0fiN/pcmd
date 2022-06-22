@@ -22,13 +22,14 @@ import typer
 import subprocess
 from typing import Optional, Any
 from .__echoes__ import (
-    echo_cmd_added, 
+    echo_cmd_added,
     echo_args_not_found_error,
     echo_argument_limit_error
 )
 from distance import levenshtein as lev  # type: ignore
 import re
 from .__const__ import PATTERN
+
 
 def get_commands() -> Optional[dict]:
     '''
@@ -100,23 +101,26 @@ def contains_placeholder(command: str) -> bool:
     '''
     return False if re.findall(PATTERN, command) == [] else True
 
+
 def get_placeholder(command: str):
     '''
     Returns all the placeholder in a command.
     '''
     return re.findall(PATTERN, command)
 
+
 def get(arr, index):
     '''Returns array elements by bypassing IndexError'''
-    try: 
+    try:
         return arr[index]
-    except:
+    except IndexError:
         return ""
+
 
 def run_command(cmd: str, args) -> None:
     '''
     Runs the commands using subprocess and chdir.
-    Checks for arguments and placeholder, and replaces 
+    Checks for arguments and placeholder, and replaces
     the placeholder with the respective arguments before execution.
     '''
     if len(args) > 10:

@@ -123,6 +123,7 @@ def echo_fish(string: str):
                 fg=typer.colors.CYAN,
                 bold=True)
 
+
 # Arguments feature echoes.
 def echo_args_not_found_error(cmd: str):
     typer.secho(f"\tERROR : Arguments not provided for the command \n{cmd}",
@@ -130,7 +131,7 @@ def echo_args_not_found_error(cmd: str):
                 bold=True)
 
 
-def echo_argument_limit_error(cmd: str):
-    typer.secho(f"\tERROR : only 10 arguments allowed.",
+def echo_argument_limit_error():
+    typer.secho("\tERROR : only 10 arguments allowed.",
                 fg=typer.colors.RED,
                 bold=True)

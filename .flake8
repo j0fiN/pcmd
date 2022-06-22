@@ -5,6 +5,8 @@ exclude =
     assets,
     __pycache__,
     build,
-    dist
+    dist,
+    env,
+    tryouts
 max-complexity = 10
 statistics = True
