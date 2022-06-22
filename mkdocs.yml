@@ -20,7 +20,7 @@ theme:
   features:
     - navigation.instant
     - header.autohide
-
+    - content.tabs.link
 
 plugins:
   - search

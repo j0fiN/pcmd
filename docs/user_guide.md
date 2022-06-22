@@ -117,17 +117,36 @@ This is the file that should contain all your commands paired up with your custo
     If file is created manually, it must be named `cmd.yaml` and NOT `cmd.yml`
 
 For single commands, type in the format of `<name>: <command>`.
-```yaml
+```yaml title="cmd.yaml"
 hi : echo hi from pcmd!
 check : poetry run pytest 
 ```
 
 For multiple commands, type the `<name>`, along with the list of command using the hyphen(`-`) symbol. 
-```yaml
+```yaml title="cmd.yaml"
 c-init:
   - git commit -m 'init commit'
   - git push
 ```
+### Argument Provision for commands
+To provide arguments for command we use the `<index>` where index MUST start from 0-9
+```yaml title="cmd.yaml" hl_lines="2"
+git:
+  - git commit -m <0>
+  - git push
+```
+and in the terminal,
+```sh-session title="Terminal"
+$ pcmd run git -a Update
+```
+!!! warning "Argument Limitations in pcmd"
+
+    - The index used in the placeholder is a crucial. It must start from **0 all the way upto 9.**
+    Also, only 10 arguments are allowed as of now.
+    - Argument should not have blank space in between
+    - To provide multiple arguments,
+        `pcmd run command -a arg1 -a arg2 -a arg3`
+
 
 ???+ Tip "Useful tips in cmd.yaml"
     - You can always check the syntax of the `cmd.yaml` using `inspect` command.  
@@ -151,7 +170,8 @@ For more details, check out their <a href="https://typer.tiangolo.com/tutorial/o
 
 ## Using `python -m`
 pcmd can also be executed as a script. i.e.,
-you can use `python -m` to execute the CLI.  
+you can use `python -m` to execute the CLI.
+
 === "python"
 
     ``` bash
