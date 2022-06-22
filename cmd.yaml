@@ -3,6 +3,7 @@ main-chain:
 - echo 2
 - echo hello
 main-hi: echo "Hi main"
+print: echo "<0> <1>"
 cd-chain:
 - cd ..
 - cd pcmd
@@ -43,3 +44,4 @@ is: poetry run python -m pcmd inspect
 l: poetry run python -m pcmd list -p
 p: poetry run python -m pcmd
 r: poetry run python -m pcmd run cd-test
+ra: poetry run python -m pcmd run print -a TEST -a PCMD

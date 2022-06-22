@@ -124,3 +124,8 @@ def test_cd():
 def test_run_not_working():
     result = runner.invoke(app, ["run", "cd"])
     assert result.exit_code == 0
+
+
+def test_run_with_args():
+    result = runner.invoke(app, ['run', 'print -a TEST -a PCMD'])
+    assert result.exit_code == 0
