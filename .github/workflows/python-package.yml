@@ -41,5 +41,7 @@ jobs:
     - name: Test with pytest cov
       run: |
         pytest --cov-config=.coveragerc --cov
+      with:
+          threshold: 70
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1
