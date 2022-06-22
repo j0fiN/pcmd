@@ -17,19 +17,19 @@ pcmd = "pcmd.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-typer = "^0.3.2"
-PyYAML = "^5.4.1"
-Distance = "^0.1.3"
+typer = "*"
+PyYAML = "*"
+Distance = "*"
 
 
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-flake8 = "^4.0.1"
-mkdocs-material = "^8.1.8"
-mypy = "^0.950"
-coverage = "^5.5"
-pytest-cov ="^2.12.0"
+pytest = "*"
+flake8 = "*"
+mkdocs-material = "*"
+mypy = "*"
+coverage = "*"
+pytest-cov ="*"
 
 
 [build-system]
