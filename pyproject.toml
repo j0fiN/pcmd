@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pcmd"
-version = "2.2.0"
+version = "2.3.0"
 description = "A super simple terminal command shortener."
 authors = ["Jofin <jofinfab@gmail.com>"]
 readme = "pypi.md"
