@@ -1,4 +1,4 @@
-## v2.2.0
+## v2.3.0
 ### :sparkles: Added arguments feature for `add` command
 > :tada: Added argument System for `add` command.  
 > :memo: Revised documentation.  
