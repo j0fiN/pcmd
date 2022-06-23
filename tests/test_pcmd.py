@@ -133,4 +133,3 @@ def test_run_with_args():
     assert result.exit_code == 0
     result = runner.invoke(app, 'run print -a TEST -a'.split())
     assert result.exit_code == 2
-
