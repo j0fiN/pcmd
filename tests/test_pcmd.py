@@ -8,7 +8,7 @@ runner = CliRunner()
 
 
 def test_version():
-    assert __version__ == '2.2.0'
+    assert __version__ == '2.3.0'
 
 
 def test_get_commands_1():
@@ -127,5 +127,10 @@ def test_run_not_working():
 
 
 def test_run_with_args():
-    result = runner.invoke(app, ['run', 'print -a TEST -a PCMD'])
+    result = runner.invoke(app, 'run print -a TEST -a PCMD'.split())
     assert result.exit_code == 0
+    result = runner.invoke(app, 'run print -a TEST'.split())
+    assert result.exit_code == 0
+    result = runner.invoke(app, 'run print -a TEST -a'.split())
+    assert result.exit_code == 2
+
