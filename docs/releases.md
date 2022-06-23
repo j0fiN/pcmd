@@ -1,5 +1,5 @@
 # Releases
-From **v1.2.3** onwards, git commits will NOT be recorded here.  
+From **v2.2.0** onwards, git commits will NOT be recorded here.  
 Check out <a href="https://github.com/j0fiN/pcmd/blob/main/CHANGELOG.md" class="link" target="_blank">CHANGELOG.md</a> for git commits record.
 
 ## v2.2.0

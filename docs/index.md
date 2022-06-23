@@ -19,10 +19,10 @@ Source code : <a href="https://github.com/j0fiN/pcmd" class="link" target="_blan
 
 ---
 
-!!! Success "v2.2.0 OUT NOW!"
-    pcmd has been updated to v2.2.0!  
-    `add` command has been introduced.
-    <a href="https://j0fin.github.io/pcmd/user_guide.html#add" class="link" target="_blank">Check it out!</a>
+!!! Success "v2.3.0 OUT NOW!"
+    pcmd has been updated to v2.3.0!  
+    Argument features in `run` command
+    <a href="https://j0fin.github.io/pcmd/user_guide#argument-provision-for-commands" class="link" target="_blank">Check it out!</a>
 
 ## About
 During daily development, it can be frustrating,
@@ -66,4 +66,4 @@ A single config file :octicons-file-code-16: ...
 
 ## Move on !
 Excited to work using ***:fontawesome-solid-fish: pcmd*** ?!
-Head over to the <a href="/user_guide" class="link">User Guide</a>
+Head over to the <a href="https://j0fin.github.io/pcmd/user_guide" class="link">User Guide</a>

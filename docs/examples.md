@@ -10,7 +10,18 @@ run-poetry: poetry run python a\long\path\to\a\file.py
 # Using python
 run-py: python a\long\path\to\a\file.py
 
+# copy certain data to clipboard for pasting purposes.
+addr: echo NO:2, Abbey Road, Earth | CLIP # for windows
+# 💲pcmd run addr
+# No need to type long text anymore for any applications!!
 
+
+# NEW FEATURES: ARGUMENTS!
+git:
+- git init
+- git add <0>
+- git commit -m <1> <2> <3> # in the terminal, 
+# 💲pcmd run git -a . -a Update -a Config -a Files
 
 # MULTIPLE COMMANDS
 list:
@@ -77,6 +88,9 @@ activate:
   - /env/Scripts/activate # but CANNOT be activated in the terminal ❌
   - pip install -r requirements.txt # since previous does not work, 
 # this will install the packages globally (which is a mess!)
+
+git:
+- git add <1> # this is invalid since argument must start with 0 ❌
 
 ```
 

@@ -43,4 +43,4 @@ Distance is a Utilities library for comparing sequences.
 
 "I needed a tool that could take away all my hassles in typing atrocious terminal commands to a 'write-once-run-anytime-with-just-a-few-words' system. I thought that this issue might not be only for me but for other developers too. I realized that if a tool could do that, it would increase our workflow to another extent."  
     
-<p align="right">~ <a href="https://jofin-f-archbald.herokuapp.com/" class="link" target="_blank">Jofin F Archbald</a></p>
+<p align="right">~ <a href="https://jofin.herokuapp.com/" class="link" target="_blank">Jofin F Archbald</a></p>

@@ -7,6 +7,9 @@ We will go through the system requirements, commands, the `cmd.yaml` file, autoc
  - [x] **pcmd** requires Python **3.6** and above.
 ??? Warning "Support for Python 2"
     Python 2 is **NOT** supported by pcmd
+???+ Tip "Adding Colors!"
+    To bring in the color scheme of pcmd, install `colorama` package, however, 
+    it is optional.
 ## Commands
 ### `init`
 The `init` command creates the `cmd.yaml` file in the current working directory.  
@@ -68,7 +71,7 @@ Hi from pcmd! # this works since cmd.yaml had a custom name 'hi'
     - activating enviroments using `/env/Scripts/activate`  
     - Starting `python`, `node`, `mongo` or any other shell. The shell will open, but the commands after it will not work.  
 
-    For more understanding, see some of the <a href="/examples" class="link">examples</a> provided.
+    For more understanding, see some of the <a href="https://j0fin.github.io/pcmd/examples" class="link">examples</a> provided.
 
 ???+ Tip "Technical details"
     Any commands which involve in the initiation of the child process will work in **pcmd**. The caveat is that the commands which are supposed to work in the child process will only work in the parent process, resulting in no command execution in the child process.
@@ -128,7 +131,7 @@ c-init:
   - git commit -m 'init commit'
   - git push
 ```
-### Argument Provision for commands
+### :sparkles: Argument Provision for commands
 To provide arguments for command we use the `<index>` where index MUST start from 0-9
 ```yaml title="cmd.yaml" hl_lines="2"
 git:
