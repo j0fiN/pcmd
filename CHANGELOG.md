@@ -1,4 +1,55 @@
 ## v2.2.0
+### :sparkles: Added arguments feature for `add` command
+> :tada: Added argument System for `add` command.  
+> :memo: Revised documentation.  
+
+#### Commits
+- :art: Nothing :) hate you flake8!
+- :memo: Updated website
+- :white_check_mark: Added 2 tests for arguments
+- :arrow_up: Updated Markdown
+- :construction_worker:  Remove Threshold option
+- :white_check_mark: Added test for arguments
+- :pushpin: Pinned pytest-cov vers
+- :wrench: Update code coverage threshold
+- :memo: Added docs for arguments
+- :art: Flake8 changes
+- :wrench: Updated dependencies.
+- [skip ci] TODO
+- [skip ci] :bulb: :recycle: Added doc for new functions
+- [skip ci] :pencil2: :memo: Fixed broken link
+- [skip ci] TODO
+- [skip ci] :sparkles: Built argument feature for run command
+- [skip ci] :alembic: :hammer: Trying out argument feature and updated code.
+- :pencil2: :heavy_plus_sign: Updated link and added colorama
+- :lipstick: Fixed image paths
+- :memo: Updated shields
+- Update README.md
+- Merge pull request #46 from j0fiN/dependabot/pip/mypy-0.950
+- :arrow_up: Bump mypy from 0.910 to 0.950
+- Merge pull request #40 from j0fiN/dependabot/pip/mkdocs-material-8.1.8
+- :arrow_up: Bump mkdocs-material from 7.3.6 to 8.1.8
+- Merge pull request #28 from j0fiN/dependabot/pip/mkdocs-material-7.3.6
+- :arrow_up: Bump mkdocs-material from 7.2.5 to 7.3.6
+- Merge pull request #29 from j0fiN/dependabot/pip/flake8-4.0.1
+- :arrow_up: Bump flake8 from 3.9.2 to 4.0.1
+- :truck: Moved tryouts files to tryouts dir
+- :white_check_mark: Ignored tryouts dir
+- :bug: Removed dataclass in tryouts
+- :hammer: tryouts for new template command
+- :hammer: linter fix for tryouts
+- :hammer: tryouts of a new feature for add command.
+- Merge pull request #17 from j0fiN/dependabot/pip/mkdocs-material-7.2.5
+- :arrow_up: Bump mkdocs-material from 7.1.11 to 7.2.5
+- Merge pull request #12 from j0fiN/dependabot/pip/mkdocs-material-7.1.11
+- :arrow_up: Bump mkdocs-material from 7.1.9 to 7.1.11
+- Merge pull request #10 from j0fiN/dependabot/pip/mkdocs-material-7.1.9
+- Update README.md
+- :arrow_up: Bump mkdocs-material from 7.1.6 to 7.1.9
+
+---
+
+## v2.2.0
 ### :sparkles: `add` command and major refactoring
 > :tada: Introducing add command to add command from terminal.  
 > :art: Complete codebase refactoring.  
