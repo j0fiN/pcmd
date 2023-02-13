@@ -29,7 +29,7 @@ flake8 = "*"
 mkdocs-material = "*"
 mypy = "*"
 coverage = "*"
-pytest-cov = "^3.0.0"
+pytest-cov = "^4.0.0"
 markdown = "*"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
